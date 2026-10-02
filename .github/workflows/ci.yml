@@ -1,0 +1,29 @@
+name: Offline package checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python tools/check_release.py
+      - run: python -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Verify deterministic rebuild
+        run: |
+          cp dist/agibot-x2-interfaces.zip "$RUNNER_TEMP/before.zip"
+          python tools/package_skill.py
+          cmp "$RUNNER_TEMP/before.zip" dist/agibot-x2-interfaces.zip
+      - name: Build curated source archive
+        run: python tools/export_release.py --output "$RUNNER_TEMP/export/github-source"
+      - name: Test exported source without private evidence
+        working-directory: ${{ runner.temp }}/export/github-source
+        run: |
+          python tools/check_release.py
+          python -m unittest discover -s tests -p 'test_*.py' -v
