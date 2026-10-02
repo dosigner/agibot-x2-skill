@@ -1,0 +1,1582 @@
+{
+  "distribution": "official-links-only",
+  "modules": {
+    "1": "Control Module",
+    "2": "Interaction Module",
+    "3": "Fault & System Management Module",
+    "4": "Hardware Abstraction Module",
+    "5": "Perception Module"
+  },
+  "features": {
+    "1.1": {
+      "id": "1.1",
+      "name": "Motion Mode Switching",
+      "keywords": [
+        "모션 모드",
+        "mode",
+        "GetMcAction",
+        "SetMcAction"
+      ],
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/modeswitch.html"
+      ],
+      "primary_examples": [
+        2,
+        3
+      ],
+      "related_examples": [],
+      "local_reference": "references/features/1.1.md"
+    },
+    "1.2": {
+      "id": "1.2",
+      "name": "Locomotion Control",
+      "keywords": [
+        "이동",
+        "보행",
+        "locomotion",
+        "velocity"
+      ],
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/locomotion.html"
+      ],
+      "primary_examples": [
+        10,
+        12
+      ],
+      "related_examples": [],
+      "local_reference": "references/features/1.2.md"
+    },
+    "1.3": {
+      "id": "1.3",
+      "name": "MC Control Signal Configuration",
+      "keywords": [
+        "입력 소스",
+        "arbitration",
+        "priority"
+      ],
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/MC_control.html"
+      ],
+      "primary_examples": [
+        8,
+        9
+      ],
+      "related_examples": [
+        4,
+        10,
+        12
+      ],
+      "local_reference": "references/features/1.3.md"
+    },
+    "1.4": {
+      "id": "1.4",
+      "name": "Motion Control Status Query",
+      "keywords": [
+        "모션 상태",
+        "McCommonState",
+        "state"
+      ],
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/mc_status.html"
+      ],
+      "primary_examples": [],
+      "related_examples": [
+        2
+      ],
+      "local_reference": "references/features/1.4.md"
+    },
+    "1.5": {
+      "id": "1.5",
+      "name": "Upper Body Control",
+      "keywords": [
+        "상체",
+        "upper body",
+        "head",
+        "arm"
+      ],
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/upper_body_control.html"
+      ],
+      "primary_examples": [
+        35
+      ],
+      "related_examples": [],
+      "local_reference": "references/features/1.5.md"
+    },
+    "1.6": {
+      "id": "1.6",
+      "name": "Preset Motion Control",
+      "keywords": [
+        "사전 정의",
+        "preset motion"
+      ],
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/preset_motion.html"
+      ],
+      "primary_examples": [
+        4
+      ],
+      "related_examples": [],
+      "local_reference": "references/features/1.6.md"
+    },
+    "1.7": {
+      "id": "1.7",
+      "name": "LinkCraft Actions",
+      "keywords": [
+        "LinkCraft",
+        "액션",
+        "동기 실행"
+      ],
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/linkcraft.html"
+      ],
+      "primary_examples": [
+        31,
+        32
+      ],
+      "related_examples": [],
+      "local_reference": "references/features/1.7.md"
+    },
+    "1.8": {
+      "id": "1.8",
+      "name": "End Effector Control",
+      "keywords": [
+        "그리퍼",
+        "손",
+        "촉각",
+        "hand",
+        "tactile"
+      ],
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/endeffector.html"
+      ],
+      "primary_examples": [
+        5,
+        6,
+        7
+      ],
+      "related_examples": [
+        35
+      ],
+      "local_reference": "references/features/1.8.md"
+    },
+    "1.9": {
+      "id": "1.9",
+      "name": "Joint Control",
+      "keywords": [
+        "관절",
+        "joint",
+        "Ruckig",
+        "궤적",
+        "IK"
+      ],
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/joint_control.html"
+      ],
+      "primary_examples": [
+        11
+      ],
+      "related_examples": [],
+      "local_reference": "references/features/1.9.md"
+    },
+    "2.1": {
+      "id": "2.1",
+      "name": "Voice Control",
+      "keywords": [
+        "음성",
+        "마이크",
+        "오디오",
+        "TTS",
+        "ASR",
+        "audio"
+      ],
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/voice.html"
+      ],
+      "primary_examples": [
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "related_examples": [],
+      "local_reference": "references/features/2.1.md"
+    },
+    "2.2": {
+      "id": "2.2",
+      "name": "Screen Control",
+      "keywords": [
+        "화면",
+        "이모지",
+        "video",
+        "emoji"
+      ],
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/screen.html"
+      ],
+      "primary_examples": [
+        18,
+        26
+      ],
+      "related_examples": [],
+      "local_reference": "references/features/2.2.md"
+    },
+    "2.3": {
+      "id": "2.3",
+      "name": "LED Strip Control",
+      "keywords": [
+        "LED",
+        "조명",
+        "lights"
+      ],
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/lights.html"
+      ],
+      "primary_examples": [
+        33
+      ],
+      "related_examples": [],
+      "local_reference": "references/features/2.3.md"
+    },
+    "2.4": {
+      "id": "2.4",
+      "name": "LinkSoul Cloud Interaction",
+      "keywords": [
+        "LinkSoul",
+        "클라우드",
+        "AgentSDK"
+      ],
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/linksoul.html"
+      ],
+      "primary_examples": [],
+      "related_examples": [],
+      "local_reference": "references/features/2.4.md"
+    },
+    "3.1": {
+      "id": "3.1",
+      "name": "Fault Detection",
+      "keywords": [
+        "고장",
+        "진단",
+        "HDS",
+        "fault",
+        "diagnostic"
+      ],
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/FASM/fault.html#id4",
+        "https://x2-aimdk.agibot.com/en/latest/Interface/FASM/fault.html#post-processing-signal"
+      ],
+      "primary_examples": [
+        36
+      ],
+      "related_examples": [],
+      "local_reference": "references/features/3.1.md"
+    },
+    "3.2": {
+      "id": "3.2",
+      "name": "System Status Monitoring",
+      "keywords": [
+        "시스템 상태",
+        "system status",
+        "monitoring"
+      ],
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/FASM/fault.html#id4",
+        "https://x2-aimdk.agibot.com/en/latest/Interface/system_state/index.html#id2"
+      ],
+      "primary_examples": [],
+      "related_examples": [
+        1,
+        36
+      ],
+      "local_reference": "references/features/3.2.md"
+    },
+    "3.3": {
+      "id": "3.3",
+      "name": "Log Management",
+      "keywords": [
+        "로그",
+        "logs",
+        "이력",
+        "history"
+      ],
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/FASM/fault.html#id7",
+        "https://x2-aimdk.agibot.com/en/latest/Interface/perception/visualization.html#logs"
+      ],
+      "primary_examples": [],
+      "related_examples": [
+        36
+      ],
+      "local_reference": "references/features/3.3.md"
+    },
+    "3.4": {
+      "id": "3.4",
+      "name": "Alert Management",
+      "keywords": [
+        "알림",
+        "alert"
+      ],
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/FASM/fault.html#id5"
+      ],
+      "primary_examples": [],
+      "related_examples": [
+        36
+      ],
+      "local_reference": "references/features/3.4.md"
+    },
+    "4.1": {
+      "id": "4.1",
+      "name": "Vision Sensor",
+      "keywords": [
+        "RGB-D",
+        "rgbd",
+        "카메라",
+        "camera",
+        "스테레오",
+        "stereo",
+        "후방",
+        "영상"
+      ],
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/hal/sensor.html#interface-rgbd-camera",
+        "https://x2-aimdk.agibot.com/en/latest/Interface/hal/sensor.html#rgb",
+        "https://x2-aimdk.agibot.com/en/latest/Interface/hal/sensor.html#stereo-camera-topics"
+      ],
+      "primary_examples": [
+        13,
+        14
+      ],
+      "related_examples": [],
+      "local_reference": "references/features/4.1.md"
+    },
+    "4.2": {
+      "id": "4.2",
+      "name": "Pose Sensor",
+      "keywords": [
+        "IMU",
+        "자세",
+        "가속도",
+        "gyro",
+        "관성"
+      ],
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/hal/sensor.html#imu"
+      ],
+      "primary_examples": [
+        17
+      ],
+      "related_examples": [
+        16
+      ],
+      "local_reference": "references/features/4.2.md"
+    },
+    "4.3": {
+      "id": "4.3",
+      "name": "주변 인식 센서",
+      "keywords": [
+        "LiDAR",
+        "라이다",
+        "GNSS",
+        "터치",
+        "주변",
+        "point cloud"
+      ],
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/hal/sensor.html#gnss",
+        "https://x2-aimdk.agibot.com/en/latest/Interface/hal/sensor.html#id7",
+        "https://x2-aimdk.agibot.com/en/latest/Interface/hal/sensor.html#interface-lidar"
+      ],
+      "primary_examples": [
+        15,
+        16,
+        34
+      ],
+      "related_examples": [
+        7
+      ],
+      "local_reference": "references/features/4.3.md"
+    },
+    "5.1": {
+      "id": "5.1",
+      "name": "SLAM Localization",
+      "keywords": [
+        "SLAM",
+        "지도",
+        "mapping",
+        "재위치",
+        "localization"
+      ],
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/perception/SLAM.html"
+      ],
+      "primary_examples": [
+        27,
+        28,
+        29
+      ],
+      "related_examples": [],
+      "local_reference": "references/features/5.1.md"
+    },
+    "5.2": {
+      "id": "5.2",
+      "name": "Navigation",
+      "keywords": [
+        "내비게이션",
+        "navigation",
+        "경로",
+        "목표점"
+      ],
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/perception/navigation.html"
+      ],
+      "primary_examples": [
+        30
+      ],
+      "related_examples": [],
+      "local_reference": "references/features/5.2.md"
+    },
+    "5.3": {
+      "id": "5.3",
+      "name": "Data Visualization",
+      "keywords": [
+        "시각화",
+        "visualization",
+        "Foxglove",
+        "RViz",
+        "RSView",
+        "robotop"
+      ],
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/perception/visualization.html#id17",
+        "https://x2-aimdk.agibot.com/en/latest/Interface/perception/visualization.html#id8"
+      ],
+      "primary_examples": [],
+      "related_examples": [],
+      "local_reference": "references/features/5.3.md"
+    }
+  },
+  "examples": [
+    {
+      "official_number": 1,
+      "title_ko": "시스템·개발자 모드 조회 및 전환",
+      "primary_module": "3",
+      "primary_feature": null,
+      "related_features": [
+        "3.2"
+      ],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-migrate-system-state",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-migrate-system-state"
+      }
+    },
+    {
+      "official_number": 2,
+      "title_ko": "현재 모션 모드 조회",
+      "primary_module": "1",
+      "primary_feature": "1.1",
+      "related_features": [
+        "1.4"
+      ],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-get-mc-action",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-get-mc-action"
+      }
+    },
+    {
+      "official_number": 3,
+      "title_ko": "모션 모드 전환",
+      "primary_module": "1",
+      "primary_feature": "1.1",
+      "related_features": [],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-set-mc-action",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-set-mc-action"
+      }
+    },
+    {
+      "official_number": 4,
+      "title_ko": "사전 정의 모션 실행",
+      "primary_module": "1",
+      "primary_feature": "1.6",
+      "related_features": [
+        "1.3"
+      ],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-preset-motion",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-preset-motion"
+      }
+    },
+    {
+      "official_number": 5,
+      "title_ko": "그리퍼 제어",
+      "primary_module": "1",
+      "primary_feature": "1.8",
+      "related_features": [],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-hand-control",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-hand-control"
+      }
+    },
+    {
+      "official_number": 6,
+      "title_ko": "다관절 손 제어",
+      "primary_module": "1",
+      "primary_feature": "1.8",
+      "related_features": [],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-omnihand-control",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-omnihand-control"
+      }
+    },
+    {
+      "official_number": 7,
+      "title_ko": "다관절 손 촉각 데이터",
+      "primary_module": "1",
+      "primary_feature": "1.8",
+      "related_features": [
+        "4.3"
+      ],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-omnihand-touch",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-omnihand-touch"
+      }
+    },
+    {
+      "official_number": 8,
+      "title_ko": "제어 입력 소스 등록",
+      "primary_module": "1",
+      "primary_feature": "1.3",
+      "related_features": [],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-set-mc-input-source",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-set-mc-input-source"
+      }
+    },
+    {
+      "official_number": 9,
+      "title_ko": "현재 제어 입력 소스 조회",
+      "primary_module": "1",
+      "primary_feature": "1.3",
+      "related_features": [],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-get-mc-input-source",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-get-mc-input-source"
+      }
+    },
+    {
+      "official_number": 10,
+      "title_ko": "로봇 이동 속도 제어",
+      "primary_module": "1",
+      "primary_feature": "1.2",
+      "related_features": [
+        "1.3"
+      ],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-locomotion",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-locomotion"
+      }
+    },
+    {
+      "official_number": 11,
+      "title_ko": "관절 모터 제어",
+      "primary_module": "1",
+      "primary_feature": "1.9",
+      "related_features": [],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-motocontrol",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-motocontrol"
+      }
+    },
+    {
+      "official_number": 12,
+      "title_ko": "키보드 이동 제어",
+      "primary_module": "1",
+      "primary_feature": "1.2",
+      "related_features": [
+        "1.3"
+      ],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-keyboard",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-keyboard"
+      }
+    },
+    {
+      "official_number": 13,
+      "title_ko": "카메라 사진 저장",
+      "primary_module": "4",
+      "primary_feature": "4.1",
+      "related_features": [],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-take-photo",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-take-photo"
+      }
+    },
+    {
+      "official_number": 14,
+      "title_ko": "카메라 스트림 구독 모음",
+      "primary_module": "4",
+      "primary_feature": "4.1",
+      "related_features": [],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-echo-cameras",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-echo-cameras"
+      },
+      "subexamples": [
+        {
+          "name": "RGB-D",
+          "urls": {
+            "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-echo-camera-rgbd",
+            "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-echo-camera-rgbd"
+          }
+        },
+        {
+          "name": "전방 스테레오",
+          "urls": {
+            "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-echo-camera-stereo",
+            "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-echo-camera-stereo"
+          }
+        },
+        {
+          "name": "후방 RGB",
+          "urls": {
+            "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-echo-camera-head-rear",
+            "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-echo-camera-head-rear"
+          }
+        }
+      ]
+    },
+    {
+      "official_number": 15,
+      "title_ko": "머리 터치 센서 구독",
+      "primary_module": "4",
+      "primary_feature": "4.3",
+      "related_features": [],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-echo-head-touch-sensor",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-echo-head-touch-sensor"
+      }
+    },
+    {
+      "official_number": 16,
+      "title_ko": "LiDAR 데이터 구독",
+      "primary_module": "4",
+      "primary_feature": "4.3",
+      "related_features": [
+        "4.2"
+      ],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-echo-lidar-data",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-echo-lidar-data"
+      }
+    },
+    {
+      "official_number": 17,
+      "title_ko": "IMU 데이터 구독",
+      "primary_module": "4",
+      "primary_feature": "4.2",
+      "related_features": [],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-echo-imu-data",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-echo-imu-data"
+      }
+    },
+    {
+      "official_number": 18,
+      "title_ko": "영상 재생",
+      "primary_module": "2",
+      "primary_feature": "2.2",
+      "related_features": [],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-play-video",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-play-video"
+      }
+    },
+    {
+      "official_number": 19,
+      "title_ko": "오디오 파일 재생",
+      "primary_module": "2",
+      "primary_feature": "2.1",
+      "related_features": [],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-play-audio",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-play-audio"
+      }
+    },
+    {
+      "official_number": 20,
+      "title_ko": "TTS 음성 합성",
+      "primary_module": "2",
+      "primary_feature": "2.1",
+      "related_features": [],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-play-tts",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-play-tts"
+      }
+    },
+    {
+      "official_number": 21,
+      "title_ko": "잡음 처리된 마이크 음성 수신",
+      "primary_module": "2",
+      "primary_feature": "2.1",
+      "related_features": [],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-mic-receiver",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-mic-receiver"
+      }
+    },
+    {
+      "official_number": 22,
+      "title_ko": "마이크 원시 음성 스트림 수신",
+      "primary_module": "2",
+      "primary_feature": "2.1",
+      "related_features": [],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-mic-raw-receiver",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-mic-raw-receiver"
+      }
+    },
+    {
+      "official_number": 23,
+      "title_ko": "현재 마이크 소스 조회",
+      "primary_module": "2",
+      "primary_feature": "2.1",
+      "related_features": [],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-get-mic-source",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-get-mic-source"
+      }
+    },
+    {
+      "official_number": 24,
+      "title_ko": "마이크 소스 전환",
+      "primary_module": "2",
+      "primary_feature": "2.1",
+      "related_features": [],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-set-mic-source",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-set-mic-source"
+      }
+    },
+    {
+      "official_number": 25,
+      "title_ko": "원시 오디오 스트림 재생",
+      "primary_module": "2",
+      "primary_feature": "2.1",
+      "related_features": [],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-play-audio-stream",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-play-audio-stream"
+      }
+    },
+    {
+      "official_number": 26,
+      "title_ko": "화면 이모지 제어",
+      "primary_module": "2",
+      "primary_feature": "2.2",
+      "related_features": [],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-play-emoji",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-play-emoji"
+      }
+    },
+    {
+      "official_number": 27,
+      "title_ko": "지도 생성",
+      "primary_module": "5",
+      "primary_feature": "5.1",
+      "related_features": [],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-slam",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-slam"
+      }
+    },
+    {
+      "official_number": 28,
+      "title_ko": "저장된 지도로 재위치 추정",
+      "primary_module": "5",
+      "primary_feature": "5.1",
+      "related_features": [],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-relocate",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-relocate"
+      }
+    },
+    {
+      "official_number": 29,
+      "title_ko": "저장된 지도 조회",
+      "primary_module": "5",
+      "primary_feature": "5.1",
+      "related_features": [],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-get-map",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-get-map"
+      }
+    },
+    {
+      "official_number": 30,
+      "title_ko": "내비게이션 작업 제어",
+      "primary_module": "5",
+      "primary_feature": "5.2",
+      "related_features": [],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-navigation",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-navigation"
+      }
+    },
+    {
+      "official_number": 31,
+      "title_ko": "LinkCraft 액션 실행",
+      "primary_module": "1",
+      "primary_feature": "1.7",
+      "related_features": [],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-play-linkcraft-action",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-play-linkcraft-action"
+      }
+    },
+    {
+      "official_number": 32,
+      "title_ko": "여러 로봇의 LinkCraft 액션 동기 실행",
+      "primary_module": "1",
+      "primary_feature": "1.7",
+      "related_features": [],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-play-linkcraft-action-multi",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-play-linkcraft-action-multi"
+      }
+    },
+    {
+      "official_number": 33,
+      "title_ko": "LED 스트립 제어",
+      "primary_module": "2",
+      "primary_feature": "2.3",
+      "related_features": [],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-play-lights",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-play-lights"
+      }
+    },
+    {
+      "official_number": 34,
+      "title_ko": "GNSS 위치 데이터 구독",
+      "primary_module": "4",
+      "primary_feature": "4.3",
+      "related_features": [],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-echo-gnss-data",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-echo-gnss-data"
+      }
+    },
+    {
+      "official_number": 35,
+      "title_ko": "상체 제어",
+      "primary_module": "1",
+      "primary_feature": "1.5",
+      "related_features": [
+        "1.8"
+      ],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-upper-body-control",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-upper-body-control"
+      }
+    },
+    {
+      "official_number": 36,
+      "title_ko": "HDS 진단·알림 구독 및 이벤트 이력 조회",
+      "primary_module": "3",
+      "primary_feature": "3.1",
+      "related_features": [
+        "3.2",
+        "3.3",
+        "3.4"
+      ],
+      "urls": {
+        "python": "https://x2-aimdk.agibot.com/en/latest/example/Python.html#py-hds-diagnostics",
+        "cpp": "https://x2-aimdk.agibot.com/en/latest/example/Cpp.html#cpp-hds-diagnostics"
+      }
+    }
+  ],
+  "types": {
+    "AbandonAudioFocus": {
+      "name": "AbandonAudioFocus",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/voice.html"
+      ],
+      "definition_included": false
+    },
+    "AlertCode": {
+      "name": "AlertCode",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/FASM/fault.html"
+      ],
+      "definition_included": false
+    },
+    "AlertCodeArray": {
+      "name": "AlertCodeArray",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/FASM/fault.html"
+      ],
+      "definition_included": false
+    },
+    "AudioCapture": {
+      "name": "AudioCapture",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/voice.html"
+      ],
+      "definition_included": false
+    },
+    "AudioData": {
+      "name": "AudioData",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/voice.html"
+      ],
+      "definition_included": false
+    },
+    "AudioFile": {
+      "name": "AudioFile",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/voice.html"
+      ],
+      "definition_included": false
+    },
+    "AudioInfo": {
+      "name": "AudioInfo",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/voice.html"
+      ],
+      "definition_included": false
+    },
+    "AudioPlayback": {
+      "name": "AudioPlayback",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/voice.html"
+      ],
+      "definition_included": false
+    },
+    "CommonTaskResponse": {
+      "name": "CommonTaskResponse",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/preset_motion.html"
+      ],
+      "definition_included": false
+    },
+    "CurrentVersion": {
+      "name": "CurrentVersion",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/linkcraft.html"
+      ],
+      "definition_included": false
+    },
+    "DiagnosticInfo": {
+      "name": "DiagnosticInfo",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/FASM/fault.html"
+      ],
+      "definition_included": false
+    },
+    "DiagnosticInfoArray": {
+      "name": "DiagnosticInfoArray",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/FASM/fault.html"
+      ],
+      "definition_included": false
+    },
+    "ExecuteActionResource": {
+      "name": "ExecuteActionResource",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/linkcraft.html"
+      ],
+      "definition_included": false
+    },
+    "FaceEmojiStatus": {
+      "name": "FaceEmojiStatus",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/screen.html"
+      ],
+      "definition_included": false
+    },
+    "FixLineIntroState": {
+      "name": "FixLineIntroState",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/perception/navigation.html"
+      ],
+      "definition_included": false
+    },
+    "FocusRequester": {
+      "name": "FocusRequester",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/voice.html"
+      ],
+      "definition_included": false
+    },
+    "FocusResponse": {
+      "name": "FocusResponse",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/voice.html"
+      ],
+      "definition_included": false
+    },
+    "GetAllJointState": {
+      "name": "GetAllJointState",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/joint_control.html"
+      ],
+      "definition_included": false
+    },
+    "GetCurrentInputSource": {
+      "name": "GetCurrentInputSource",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/MC_control.html"
+      ],
+      "definition_included": false
+    },
+    "GetHandType": {
+      "name": "GetHandType",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/endeffector.html"
+      ],
+      "definition_included": false
+    },
+    "GetHdsEventHistory": {
+      "name": "GetHdsEventHistory",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/FASM/fault.html"
+      ],
+      "definition_included": false
+    },
+    "GetMcAction": {
+      "name": "GetMcAction",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/modeswitch.html"
+      ],
+      "definition_included": false
+    },
+    "GetMcPresetMotionState": {
+      "name": "GetMcPresetMotionState",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/preset_motion.html"
+      ],
+      "definition_included": false
+    },
+    "GetMicSourceRequest": {
+      "name": "GetMicSourceRequest",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/voice.html"
+      ],
+      "definition_included": false
+    },
+    "GetMute": {
+      "name": "GetMute",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/voice.html"
+      ],
+      "definition_included": false
+    },
+    "GetRobotResources": {
+      "name": "GetRobotResources",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/linkcraft.html"
+      ],
+      "definition_included": false
+    },
+    "GetStoredMapByName": {
+      "name": "GetStoredMapByName",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/perception/SLAM.html"
+      ],
+      "definition_included": false
+    },
+    "GetSystemState": {
+      "name": "GetSystemState",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/system_state/index.html"
+      ],
+      "definition_included": false
+    },
+    "GetVolume": {
+      "name": "GetVolume",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/voice.html"
+      ],
+      "definition_included": false
+    },
+    "GroupControlTimeSync": {
+      "name": "GroupControlTimeSync",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/linkcraft.html"
+      ],
+      "definition_included": false
+    },
+    "HRPoint": {
+      "name": "HRPoint",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/perception/SLAM.html"
+      ],
+      "definition_included": false
+    },
+    "HandCommand": {
+      "name": "HandCommand",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/endeffector.html"
+      ],
+      "definition_included": false
+    },
+    "HandCommandArray": {
+      "name": "HandCommandArray",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/endeffector.html"
+      ],
+      "definition_included": false
+    },
+    "HandState": {
+      "name": "HandState",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/endeffector.html"
+      ],
+      "definition_included": false
+    },
+    "HandStateArray": {
+      "name": "HandStateArray",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/endeffector.html"
+      ],
+      "definition_included": false
+    },
+    "HandTouchSensorData": {
+      "name": "HandTouchSensorData",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/endeffector.html"
+      ],
+      "definition_included": false
+    },
+    "HdsEventQuery": {
+      "name": "HdsEventQuery",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/FASM/fault.html"
+      ],
+      "definition_included": false
+    },
+    "HdsEventRecord": {
+      "name": "HdsEventRecord",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/FASM/fault.html"
+      ],
+      "definition_included": false
+    },
+    "JointCommand": {
+      "name": "JointCommand",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/joint_control.html"
+      ],
+      "definition_included": false
+    },
+    "JointCommandArray": {
+      "name": "JointCommandArray",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/joint_control.html"
+      ],
+      "definition_included": false
+    },
+    "JointState": {
+      "name": "JointState",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/joint_control.html"
+      ],
+      "definition_included": false
+    },
+    "JointStateArray": {
+      "name": "JointStateArray",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/joint_control.html"
+      ],
+      "definition_included": false
+    },
+    "McActionCommand": {
+      "name": "McActionCommand",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/modeswitch.html"
+      ],
+      "definition_included": false
+    },
+    "McActionInfo": {
+      "name": "McActionInfo",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/mc_status.html",
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/modeswitch.html"
+      ],
+      "definition_included": false
+    },
+    "McCommonState": {
+      "name": "McCommonState",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/mc_status.html"
+      ],
+      "definition_included": false
+    },
+    "McControlArea": {
+      "name": "McControlArea",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/preset_motion.html"
+      ],
+      "definition_included": false
+    },
+    "McInputSource": {
+      "name": "McInputSource",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/MC_control.html",
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/mc_status.html"
+      ],
+      "definition_included": false
+    },
+    "McLocomotionSpeedStatus": {
+      "name": "McLocomotionSpeedStatus",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/mc_status.html"
+      ],
+      "definition_included": false
+    },
+    "McLocomotionVelocity": {
+      "name": "McLocomotionVelocity",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/locomotion.html"
+      ],
+      "definition_included": false
+    },
+    "McMotionStatus": {
+      "name": "McMotionStatus",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/mc_status.html"
+      ],
+      "definition_included": false
+    },
+    "McPresetMotion": {
+      "name": "McPresetMotion",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/preset_motion.html"
+      ],
+      "definition_included": false
+    },
+    "McRuntimeModel": {
+      "name": "McRuntimeModel",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/mc_status.html"
+      ],
+      "definition_included": false
+    },
+    "McServoStatus": {
+      "name": "McServoStatus",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/mc_status.html"
+      ],
+      "definition_included": false
+    },
+    "MigrateSystemState": {
+      "name": "MigrateSystemState",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/system_state/index.html"
+      ],
+      "definition_included": false
+    },
+    "NaviPoint": {
+      "name": "NaviPoint",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/perception/SLAM.html"
+      ],
+      "definition_included": false
+    },
+    "Path": {
+      "name": "Path",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/perception/SLAM.html"
+      ],
+      "definition_included": false
+    },
+    "PilotState": {
+      "name": "PilotState",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/perception/navigation.html"
+      ],
+      "definition_included": false
+    },
+    "PlayAudioFile": {
+      "name": "PlayAudioFile",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/voice.html"
+      ],
+      "definition_included": false
+    },
+    "PlayEmoji": {
+      "name": "PlayEmoji",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/screen.html"
+      ],
+      "definition_included": false
+    },
+    "PlayEmojiGroup": {
+      "name": "PlayEmojiGroup",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/screen.html"
+      ],
+      "definition_included": false
+    },
+    "PlayStateChange": {
+      "name": "PlayStateChange",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/voice.html"
+      ],
+      "definition_included": false
+    },
+    "PlayTts": {
+      "name": "PlayTts",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/voice.html"
+      ],
+      "definition_included": false
+    },
+    "PlayTtsRequest": {
+      "name": "PlayTtsRequest",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/voice.html"
+      ],
+      "definition_included": false
+    },
+    "PlayTtsResponse": {
+      "name": "PlayTtsResponse",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/voice.html"
+      ],
+      "definition_included": false
+    },
+    "PlayVideo": {
+      "name": "PlayVideo",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/screen.html"
+      ],
+      "definition_included": false
+    },
+    "PlayVideoGroup": {
+      "name": "PlayVideoGroup",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/screen.html"
+      ],
+      "definition_included": false
+    },
+    "PmuLedState": {
+      "name": "PmuLedState",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/lights.html"
+      ],
+      "definition_included": false
+    },
+    "PncTaskRequest": {
+      "name": "PncTaskRequest",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/perception/navigation.html"
+      ],
+      "definition_included": false
+    },
+    "PncTaskResponse": {
+      "name": "PncTaskResponse",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/perception/navigation.html"
+      ],
+      "definition_included": false
+    },
+    "PostProcSig": {
+      "name": "PostProcSig",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/FASM/fault.html"
+      ],
+      "definition_included": false
+    },
+    "PostProcSigArray": {
+      "name": "PostProcSigArray",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/FASM/fault.html"
+      ],
+      "definition_included": false
+    },
+    "ProcessedAudioOutput": {
+      "name": "ProcessedAudioOutput",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/voice.html"
+      ],
+      "definition_included": false
+    },
+    "QRCode": {
+      "name": "QRCode",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/perception/SLAM.html"
+      ],
+      "definition_included": false
+    },
+    "QRPoint": {
+      "name": "QRPoint",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/perception/SLAM.html"
+      ],
+      "definition_included": false
+    },
+    "Region": {
+      "name": "Region",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/perception/SLAM.html"
+      ],
+      "definition_included": false
+    },
+    "RequestAudioFocus": {
+      "name": "RequestAudioFocus",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/voice.html"
+      ],
+      "definition_included": false
+    },
+    "ResponseHeader": {
+      "name": "ResponseHeader",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/preset_motion.html"
+      ],
+      "definition_included": false
+    },
+    "RobotResource": {
+      "name": "RobotResource",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/linkcraft.html"
+      ],
+      "definition_included": false
+    },
+    "SetMcAction": {
+      "name": "SetMcAction",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/modeswitch.html"
+      ],
+      "definition_included": false
+    },
+    "SetMcInputSource": {
+      "name": "SetMcInputSource",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/MC_control.html"
+      ],
+      "definition_included": false
+    },
+    "SetMcPresetMotion": {
+      "name": "SetMcPresetMotion",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/preset_motion.html"
+      ],
+      "definition_included": false
+    },
+    "SetMicSourceRequest": {
+      "name": "SetMicSourceRequest",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/voice.html"
+      ],
+      "definition_included": false
+    },
+    "SetMute": {
+      "name": "SetMute",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/voice.html"
+      ],
+      "definition_included": false
+    },
+    "SetPmuLed": {
+      "name": "SetPmuLed",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/lights.html"
+      ],
+      "definition_included": false
+    },
+    "SetVolume": {
+      "name": "SetVolume",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/voice.html"
+      ],
+      "definition_included": false
+    },
+    "SigSet": {
+      "name": "SigSet",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/FASM/fault.html"
+      ],
+      "definition_included": false
+    },
+    "SlaveDevice": {
+      "name": "SlaveDevice",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/linkcraft.html"
+      ],
+      "definition_included": false
+    },
+    "SmSystemState": {
+      "name": "SmSystemState",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/system_state/index.html"
+      ],
+      "definition_included": false
+    },
+    "StopAudioPlay": {
+      "name": "StopAudioPlay",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/voice.html"
+      ],
+      "definition_included": false
+    },
+    "TaskMasterState": {
+      "name": "TaskMasterState",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/perception/navigation.html"
+      ],
+      "definition_included": false
+    },
+    "TouchState": {
+      "name": "TouchState",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/hal/sensor.html"
+      ],
+      "definition_included": false
+    },
+    "TtsPriorityLevel": {
+      "name": "TtsPriorityLevel",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/interactor/voice.html"
+      ],
+      "definition_included": false
+    },
+    "UpperBodyCommandArray": {
+      "name": "UpperBodyCommandArray",
+      "sources": [
+        "https://x2-aimdk.agibot.com/en/latest/Interface/control_mod/upper_body_control.html"
+      ],
+      "definition_included": false
+    }
+  },
+  "robot_sources": {
+    "joint_ranges": "https://x2-aimdk.agibot.com/en/latest/about_agibot_X2/joint_name_and_limit.html",
+    "sensor_fov": "https://x2-aimdk.agibot.com/en/latest/about_agibot_X2/sensor_fov.html"
+  },
+  "supplemental_references": [
+    {
+      "feature": "3.2",
+      "url": "https://x2-aimdk.agibot.com/en/latest/Interface/system_state/index.html#id2"
+    },
+    {
+      "feature": "3.3",
+      "url": "https://x2-aimdk.agibot.com/en/latest/Interface/perception/visualization.html#logs"
+    },
+    {
+      "feature": "3.4",
+      "url": "https://x2-aimdk.agibot.com/en/latest/Interface/FASM/fault.html#id5"
+    },
+    {
+      "feature": "3.3",
+      "url": "https://x2-aimdk.agibot.com/en/latest/Interface/FASM/fault.html#id7"
+    }
+  ]
+}
