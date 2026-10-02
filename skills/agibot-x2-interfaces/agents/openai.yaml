@@ -1,0 +1,6 @@
+interface:
+  display_name: "AGIBOT X2 Ultra"
+  short_description: "X2 Ultra ROS 2 인터페이스 학습·구현과 모션 없는 검증"
+  default_prompt: "$agibot-x2-interfaces를 사용해 AGIBOT X2 Ultra의 관련 인터페이스를 확인하고 요청한 설명 또는 코드 변경을 수행해줘."
+policy:
+  allow_implicit_invocation: true
