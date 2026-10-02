@@ -1,0 +1,11 @@
+[
+  ".gitignore", ".gitattributes", ".github/workflows/ci.yml",
+  "VERSION", "LICENSE", "README.md", "README.ko.md", "INSTALL_FOR_AGENTS.md", "AGENTS.md",
+  "THIRD_PARTY_NOTICES.md", "public_files.json",
+  "docs/*.md", "docs/validation/*.json", "skills/agibot-x2-interfaces/**/*",
+  "tools/install_skill.py", "tools/package_skill.py", "tools/validate_package.py",
+  "tools/export_release.py", "tools/check_release.py",
+  "tests/test_package.py", "tests/test_release.py", "tests/acceptance_cases.json", "tests/fixtures/*.py",
+  "dist/agibot-x2-interfaces.zip", "dist/agibot-x2-interfaces.zip.sha256",
+  "dist/agibot-x2-interfaces-1.1.0.zip", "dist/agibot-x2-interfaces-1.1.0.zip.sha256"
+]

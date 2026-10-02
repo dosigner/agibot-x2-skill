@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.venv/
+evidence/
+release/
+.agibot-x2-backups/
+.DS_Store
