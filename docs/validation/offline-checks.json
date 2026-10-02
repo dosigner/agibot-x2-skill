@@ -1,0 +1,38 @@
+{
+  "version": "1.1.0",
+  "scope": "fresh local clone of allowlisted source, without external inputs or evidence",
+  "passed": true,
+  "tests_per_interpreter": 19,
+  "runtime_versions": [
+    "3.12.3",
+    "3.14.7"
+  ],
+  "manufacturer_definition_files": 0,
+  "manufacturer_specification_tables": 0,
+  "skill_files": 37,
+  "deterministic_skill_zip_sha256": "0fe3b2133d226a9479651800b06fa22e08c7252817dcd67b3c61b6400d19fa12",
+  "runs": [
+    {
+      "label": "python312-release",
+      "exit_code": 0,
+      "log_sha256": "d96a3a91651f56f4534f6c0185bbdbdb484f53f6fe3da483a460f9e89ca505a5"
+    },
+    {
+      "label": "python312-tests",
+      "exit_code": 0,
+      "log_sha256": "9effa742e201526f749d5892c51212376211237589fb050c32a2e229f68e83eb"
+    },
+    {
+      "label": "python314-release",
+      "exit_code": 0,
+      "log_sha256": "d96a3a91651f56f4534f6c0185bbdbdb484f53f6fe3da483a460f9e89ca505a5"
+    },
+    {
+      "label": "python314-tests",
+      "exit_code": 0,
+      "log_sha256": "18e624692c72e93714da9131e12150433d452c7392d98d40bf5f0db7dd4142c1"
+    }
+  ],
+  "hardware_tested": false,
+  "hosted_ci_tested": false
+}

@@ -1,0 +1,49 @@
+{
+  "version": "1.1.0",
+  "runs": [
+    {
+      "client": "codex",
+      "version": "1.1.0",
+      "scope": "isolated installed skill, network disabled by task instruction",
+      "installation_origin": "host-side installer",
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 104.03,
+      "evidence_sha256": {
+        "prompt.txt": "b3fdb4394405247e2650be468266529453f69805a07308130b5cafdea9a30162",
+        "events.jsonl": "5af70a73d54620b502c178b61182cc4058b3a9fc37959dd56d25f28e8ea6e93c",
+        "answer.txt": "d939b6b176e747b4f606b926aca826949615161b35a370a996ebe6a897623302"
+      },
+      "observed": {
+        "correct_rgbd_example_link": true,
+        "type_definition_reported_absent": true,
+        "joint_limits_reported_unavailable": true,
+        "no_fabricated_fields_or_limit_values_in_answer": true,
+        "assessment": "authoring agent reviewed answer and tool trace"
+      }
+    },
+    {
+      "client": "claude",
+      "version": "1.1.0",
+      "scope": "isolated installed skill, network disabled by task instruction",
+      "installation_origin": "host-side installer",
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 54.49,
+      "evidence_sha256": {
+        "prompt.txt": "a5aa0c7719daf935e82c93f559f4def05e000302868638c7e23909a49bcd832c",
+        "events.jsonl": "918316e6bf895b40b120bdae17c7012519b9fa6e2f32fc158101c40143c6c116",
+        "answer.txt": "769965f7f3449b7a2f48aa9fdca9356844427551984b0b6903172efd6997481b"
+      },
+      "observed": {
+        "correct_rgbd_example_link": true,
+        "type_definition_reported_absent": true,
+        "joint_limits_reported_unavailable": true,
+        "no_fabricated_fields_or_limit_values_in_answer": true,
+        "assessment": "authoring agent reviewed answer and tool trace"
+      }
+    }
+  ],
+  "cursor": "not_run",
+  "limitation": "Explicit invocation after host-side installation, not proof of unattended installation. Claude inspected a broader file listing than necessary but did not read external definitions found there."
+}

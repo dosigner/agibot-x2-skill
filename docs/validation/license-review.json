@@ -1,0 +1,30 @@
+{
+  "checked_date": "2026-10-02",
+  "urdf_commit": "575cc6b988f976c23550e0db85aa1e5475d3652d",
+  "original_material_license": "MulanPSL-2.0",
+  "manufacturer_document_redistribution_permission": "not_established",
+  "public_distribution": "official-links-only",
+  "user_approved": true,
+  "sources": [
+    {
+      "url": "https://x2-aimdk.agibot.com/en/latest/",
+      "sha256": "8e1165a59a0c94a6949ce3fc7f189659966f7997e4383a892997592f235df57e",
+      "http_status": 200
+    },
+    {
+      "url": "https://x2-aimdk.agibot.com/en/latest/Interface/hal/sensor.html",
+      "sha256": "5fe7f2e6634f2110fcd0ae0c312a20eef53082dbd60dbe79f953c158a51c13ea",
+      "http_status": 200
+    },
+    {
+      "url": "https://x2-aimdk.agibot.com/en/latest/end_notes.html",
+      "sha256": "9ad628dc3a61905d8a47cfba18e2c81169e340a701395c57eeeb05b6f6c8632f",
+      "http_status": 200
+    },
+    {
+      "url": "https://raw.githubusercontent.com/AgibotTech/agibot_x2_urdf/main/LICENSE",
+      "sha256": "d5777bea50dc2cd111845d8a9c51ab990d188ce343b843e5ad3e653b5fa8fdab",
+      "http_status": 200
+    }
+  ]
+}
