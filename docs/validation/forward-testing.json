@@ -1,0 +1,323 @@
+{
+  "version": "1.2.1",
+  "review_date": "2026-11-17",
+  "runtime": "codex-cli 0.169.0",
+  "model": "CLI default; no explicit model override",
+  "workspace": "fresh temporary workspace per case; no inherited conversation",
+  "skill_selection": "natural requests without explicit skill names; actual SKILL.md read commands observed",
+  "agent_constraints": "workspace-write sandbox; local synthetic fixtures; no robot/SSH/localhost/external-data access; online model inference",
+  "baseline": {
+    "cases": 13,
+    "passed": 13
+  },
+  "revised": {
+    "unique_cases": 16,
+    "passed": 16,
+    "additional_control_rechecks": 2
+  },
+  "negative_cases": [
+    "negative",
+    "negative-simulation"
+  ],
+  "standalone_cases": [
+    "standalone-sensors",
+    "standalone-control"
+  ],
+  "independent_code_checks": [
+    "sensors",
+    "slam",
+    "control",
+    "standalone-sensors"
+  ],
+  "results": [
+    {
+      "id": "runtime",
+      "observed_skills": [
+        "agibot-x2-runtime"
+      ],
+      "expected_skills": [
+        "agibot-x2-runtime"
+      ],
+      "passed": true,
+      "errors": [],
+      "evaluated_skill_sha256": {
+        "agibot-x2-runtime": "a533b7e11c55babc7c0612ae5aa3c946d117791dd4119e9e84813382a01a2064"
+      },
+      "artifact_sha256": {
+        "result.json": "deda55056716b4e0e1e2608a07e8f831aa55d2fb3f1ed013b813d13cdd858bcb"
+      }
+    },
+    {
+      "id": "sensors",
+      "observed_skills": [
+        "agibot-x2-sensors"
+      ],
+      "expected_skills": [
+        "agibot-x2-sensors"
+      ],
+      "passed": true,
+      "errors": [],
+      "evaluated_skill_sha256": {
+        "agibot-x2-sensors": "4cf7b5c1c7d34d49e96296bc6052196765b0518ddeb9fb154bd2205669d49f36"
+      },
+      "artifact_sha256": {
+        "independent_check.txt": "71af8f074bcf729c30b92e2c8e38d4648551dd3684ac80cbb349577ded4edcc8",
+        "geometry.py": "63e6eb9af8e0b0abf3eab339b70892129ce74f94924c1e022ffabe59a5884df8"
+      }
+    },
+    {
+      "id": "voice",
+      "observed_skills": [
+        "agibot-x2-voice"
+      ],
+      "expected_skills": [
+        "agibot-x2-voice"
+      ],
+      "passed": true,
+      "errors": [],
+      "evaluated_skill_sha256": {
+        "agibot-x2-voice": "617167000afb567198f4dc5d0fadb9e613bd259c933b582e244146fc3c7cbc99"
+      },
+      "artifact_sha256": {
+        "result.json": "8206e848c12f4871406a8e67e32ffa18d8946ff8bd3086cf540bf9123fecc0ae"
+      }
+    },
+    {
+      "id": "face",
+      "observed_skills": [
+        "agibot-x2-face"
+      ],
+      "expected_skills": [
+        "agibot-x2-face"
+      ],
+      "passed": true,
+      "errors": [],
+      "evaluated_skill_sha256": {
+        "agibot-x2-face": "a82c6b6ca5eb8e137cf2568c2516021fafcd6f2d5c69dd5bca0566af1134b042"
+      },
+      "artifact_sha256": {
+        "result.json": "d3450fdcf51618c72df5a686e138cbbda6f4ee83faf6322f724614082d8c6945"
+      }
+    },
+    {
+      "id": "hri",
+      "observed_skills": [
+        "agibot-x2-hri"
+      ],
+      "expected_skills": [
+        "agibot-x2-hri"
+      ],
+      "passed": true,
+      "errors": [],
+      "evaluated_skill_sha256": {
+        "agibot-x2-hri": "6a45424bc3f32379a7edeb0983ef0d199cbb0fb3d413305e7945d1942a9da751"
+      },
+      "artifact_sha256": {
+        "result.json": "7d83f66c287a70563670b108416eb43ea6af633f421996b114512e7297d0695f"
+      }
+    },
+    {
+      "id": "slam",
+      "observed_skills": [
+        "agibot-x2-slam-navigation"
+      ],
+      "expected_skills": [
+        "agibot-x2-slam-navigation"
+      ],
+      "passed": true,
+      "errors": [],
+      "evaluated_skill_sha256": {
+        "agibot-x2-slam-navigation": "44830b9b3d6be21cf92ced49d45d0d7fd2004ee75cb617af96469f61519c54d6"
+      },
+      "artifact_sha256": {
+        "independent_check.txt": "ce3d2c8334b6c19b44643873f8ccd52958619e4fd6d63fbe5fd704f67f77bdda",
+        "pose.py": "47ab153f7a74b35e72f9c277fa8fdc059901034748c33bef61bfcb0f689e5f7e"
+      }
+    },
+    {
+      "id": "control",
+      "observed_skills": [
+        "agibot-x2-control"
+      ],
+      "expected_skills": [
+        "agibot-x2-control"
+      ],
+      "passed": true,
+      "errors": [],
+      "evaluated_skill_sha256": {
+        "agibot-x2-control": "601e0fcb6b3bfcecee62084c2607daec624dcf946cf20838700d26d947774715"
+      },
+      "artifact_sha256": {
+        "ledger.py": "215cb0616f5bdb75cb7a4cda12002a2e88291c572eb4dcdef6c5e00287029355",
+        "independent_check.txt": "cd984f5c6852d2eca0a73cbff25fb84629656b95b5af8fa6f3be819c370482c6"
+      }
+    },
+    {
+      "id": "dashboard",
+      "observed_skills": [
+        "agibot-x2-dashboard"
+      ],
+      "expected_skills": [
+        "agibot-x2-dashboard"
+      ],
+      "passed": true,
+      "errors": [],
+      "evaluated_skill_sha256": {
+        "agibot-x2-dashboard": "692b684ba99aa85d7a97ae0001f2af6faa8f17b3a87e9607f49ae6e5c0e96907"
+      },
+      "artifact_sha256": {
+        "result.json": "f579ba6a7a227d6297ae8a9d7b82c8cb5db366bd7300a46b42f28e0fcaae6256"
+      }
+    },
+    {
+      "id": "motion",
+      "observed_skills": [
+        "agibot-x2-motion-retargeting",
+        "agibot-x2-simulation"
+      ],
+      "expected_skills": [
+        "agibot-x2-motion-retargeting"
+      ],
+      "passed": true,
+      "errors": [],
+      "evaluated_skill_sha256": {
+        "agibot-x2-motion-retargeting": "776336b7c2eed4d42cf4c60bc5c703a8adf90a3928a804c9250aa81885405454",
+        "agibot-x2-simulation": "0bae104cf72d7e2fa08471559e2a91f68fcb7937bfdc540e6be0dbd77dcf21fa"
+      },
+      "artifact_sha256": {
+        "result.json": "5659ee6a2906ce9422ef94691419f16071cc0ace563118a07aa1f5fe13011cf9"
+      }
+    },
+    {
+      "id": "simulation",
+      "observed_skills": [
+        "agibot-x2-simulation"
+      ],
+      "expected_skills": [
+        "agibot-x2-simulation"
+      ],
+      "passed": true,
+      "errors": [],
+      "evaluated_skill_sha256": {
+        "agibot-x2-simulation": "0bae104cf72d7e2fa08471559e2a91f68fcb7937bfdc540e6be0dbd77dcf21fa"
+      },
+      "artifact_sha256": {
+        "result.json": "72a5213ed31d84b0a8f2e01a874e62822b22c091ff0a5c502ba5d4d623e19dbf"
+      }
+    },
+    {
+      "id": "interfaces",
+      "observed_skills": [
+        "agibot-x2-interfaces",
+        "agibot-x2-sensors"
+      ],
+      "expected_skills": [
+        "agibot-x2-interfaces"
+      ],
+      "passed": true,
+      "errors": [],
+      "evaluated_skill_sha256": {
+        "agibot-x2-interfaces": "8fcc6bbb44d5c200ce2591a6cdf04937abaaae979c7d182d611cad73abf75620",
+        "agibot-x2-sensors": "4cf7b5c1c7d34d49e96296bc6052196765b0518ddeb9fb154bd2205669d49f36"
+      },
+      "artifact_sha256": {
+        "result.json": "ff4885d2c4f1015d2697ccd0a607d354c00fa2c022fdf18936441c29722f8b6b"
+      }
+    },
+    {
+      "id": "negative",
+      "observed_skills": [],
+      "expected_skills": [],
+      "passed": true,
+      "errors": [],
+      "evaluated_skill_sha256": {},
+      "artifact_sha256": {
+        "result.txt": "37a460d3f1d66e7d713e5704c5d039aae01eb0781696c1d3618abc96789d7f25"
+      }
+    },
+    {
+      "id": "scope",
+      "observed_skills": [
+        "agibot-x2-interfaces",
+        "agibot-x2-runtime",
+        "agibot-x2-simulation"
+      ],
+      "expected_skills": [
+        "agibot-x2-interfaces",
+        "agibot-x2-simulation"
+      ],
+      "passed": true,
+      "errors": [],
+      "evaluated_skill_sha256": {
+        "agibot-x2-interfaces": "8fcc6bbb44d5c200ce2591a6cdf04937abaaae979c7d182d611cad73abf75620",
+        "agibot-x2-runtime": "a533b7e11c55babc7c0612ae5aa3c946d117791dd4119e9e84813382a01a2064",
+        "agibot-x2-simulation": "0bae104cf72d7e2fa08471559e2a91f68fcb7937bfdc540e6be0dbd77dcf21fa"
+      },
+      "artifact_sha256": {
+        "result.json": "1ebfa00a35f470480a9bf68792fabc36c12f1b1ca0aff102fd46851a287ce50c"
+      }
+    },
+    {
+      "id": "standalone-sensors",
+      "observed_skills": [
+        "agibot-x2-sensors"
+      ],
+      "expected_skills": [
+        "agibot-x2-sensors"
+      ],
+      "passed": true,
+      "errors": [],
+      "evaluated_skill_sha256": {
+        "agibot-x2-sensors": "4cf7b5c1c7d34d49e96296bc6052196765b0518ddeb9fb154bd2205669d49f36"
+      },
+      "artifact_sha256": {
+        "independent_check.txt": "71af8f074bcf729c30b92e2c8e38d4648551dd3684ac80cbb349577ded4edcc8",
+        "geometry.py": "d10158ceaf192b66eab7708d3d0463aedaf671967dc4d8cd0b04d611a20998fc"
+      }
+    },
+    {
+      "id": "standalone-control",
+      "observed_skills": [
+        "agibot-x2-control"
+      ],
+      "expected_skills": [
+        "agibot-x2-control"
+      ],
+      "passed": true,
+      "errors": [],
+      "evaluated_skill_sha256": {
+        "agibot-x2-control": "601e0fcb6b3bfcecee62084c2607daec624dcf946cf20838700d26d947774715"
+      },
+      "artifact_sha256": {
+        "result.json": "2697c449d77dfed60f59aeb6f526820fe1ddcda840fbf1680e50540a6119eb9d"
+      }
+    },
+    {
+      "id": "negative-simulation",
+      "observed_skills": [],
+      "expected_skills": [],
+      "passed": true,
+      "errors": [],
+      "evaluated_skill_sha256": {},
+      "artifact_sha256": {
+        "result.json": "f6aa54897b12241903722bf81614beb9d2b3b05c03283aed4425025e98d6438c"
+      }
+    }
+  ],
+  "limitations": [
+    "one default Codex model, small deterministic scenario sample",
+    "not repeated reliability measurement or no-skill causal comparison",
+    "global skill catalog also available; no intended skill or oracle output in task prompt",
+    "desktop picker UI, Claude and Cursor model behavior not tested",
+    "no live hardware, new physical simulation or training"
+  ],
+  "fix_basis": {
+    "behavioral_failure_reproduced": false,
+    "static_review_findings": [
+      "project-specific version wording was ambiguous outside original project",
+      "standalone sensor skill omitted optical-Z versus range projection assumptions",
+      "standalone control skill omitted N/A/asymmetry and continuous extrema rules",
+      "specialist installation guide still unconditionally required lookup.py"
+    ]
+  }
+}

@@ -11,3 +11,5 @@
 | `output/x2_preset_preflight_rca_20261026/REPORT.md` | `9c95cfe66346755208015b3e10e06317cf5962662b740243507c22e4bdb4fe67` |
 | `output/x2_locomotion_limits_latency_20261109/REPORT.md` | `a788602f27e059736b486653997a64c757884dc534633a2cc7d1fc8f42b5db51` |
 | `output/x2_preset_discovery_fix_20261109/REPORT.md` | `e45d639e9a1c4acf2b466a75c954ceae132760ac816b38444d7ef9d18cc08a46` |
+
+1.2.1의 독립 설치 보완은 기존 공개 [interface 참고문서](https://github.com/dosigner/agibot-x2-skill/blob/a43a439244585fe2d5820d83625e32401111c065/skills/agibot-x2-interfaces/references/robot/joints.md)의 적용 조건을 전문 스킬에도 포함한 것이다. 새 실기 측정 결과가 아니다.

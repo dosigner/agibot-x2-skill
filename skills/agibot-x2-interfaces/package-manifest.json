@@ -1,13 +1,13 @@
 {
   "name": "agibot-x2-interfaces",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "distribution": "official-links-only",
   "license": "MulanPSL-2.0",
   "source_document_version": "AimDK 1.0.0 field baseline; official web links are mutable; no manufacturer document snapshot included",
   "files": {
     "LICENSE": "d5777bea50dc2cd111845d8a9c51ab990d188ce343b843e5ad3e653b5fa8fdab",
     "NOTICE.md": "b41347aa2b2ebfd4b59a36055fbfdfc24c5563ea702899cf9d9a356dbb328fbc",
-    "SKILL.md": "770979e4a068b6dbf57ad542b3401b5e25699b2c19f72bbcd01b30ca87711bff",
+    "SKILL.md": "8fcc6bbb44d5c200ce2591a6cdf04937abaaae979c7d182d611cad73abf75620",
     "agents/openai.yaml": "24b43f3b3ccd0526077cd49f1c095f2d9a1609b55b42adb3099fe62dcd489107",
     "references/data/routes.json": "6a19a6a1353a686d83e3ac1c22f79ecffeb50aed75b1b4a9f384d217f346705f",
     "references/environment-and-validation.md": "471d660f05cdb582acb1d6aa5ccab00df73fae0870033045e8b80261431a1e0f",

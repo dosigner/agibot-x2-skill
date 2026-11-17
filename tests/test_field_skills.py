@@ -28,7 +28,7 @@ class FieldSkillTests(unittest.TestCase):
                         self.assertEqual({Path(n).parts[0] for n in archive.namelist()}, {source.name})
                         archive.extractall(extracted.parent)
                     result = subprocess.run([sys.executable, str(extracted / 'scripts/verify.py'),
-                                             '--expected-version', '1.2.0'], cwd=base,
+                                             '--expected-version', (ROOT / 'VERSION').read_text().strip()], cwd=base,
                                             text=True, capture_output=True)
                     self.assertEqual(result.returncode, 0, result.stderr + result.stdout)
                     for client, directory in [('codex', '.agents'), ('claude', '.claude'), ('cursor', '.cursor')]:

@@ -4,11 +4,13 @@
 
 Codex, Claude Code, Cursor에서 AGIBOT X2 Ultra의 AimDK/ROS 2 인터페이스를 학습하고 C++, Python 코드를 수정하거나 자체 알고리즘을 개발할 때 쓰는 공통 스킬입니다. 요청에 필요한 공식 문서와 예제를 선택한 뒤 설명하거나 코드를 작성합니다.
 
-버전 **1.2.0**은 제조사 문서 사본을 공식 링크로 대체한 공개판입니다. 설치, 무결성 검사, 링크 검색은 오프라인에서 가능합니다. 정확한 메시지 필드, 토픽 계약, 관절 범위와 센서 사양은 해당 공식 페이지 또는 설치된 SDK에서 확인합니다. 기체 기준은 **X2 Ultra Edition**이며 실행 경로를 확인한 모션 없는 장치 조회는 허용하고 명시적인 제어 요청은 현재 프로젝트 지침과 control 스킬의 설치 계약 및 기존 보호를 따릅니다. 설치 요청 자체는 로봇 실행 요청이 아닙니다.
+버전 **1.2.1**은 제조사 문서 사본을 공식 링크로 대체한 공개판입니다. 설치, 무결성 검사, 링크 검색은 오프라인에서 가능합니다. 정확한 메시지 필드, 토픽 계약, 관절 범위와 센서 사양은 해당 공식 페이지 또는 설치된 SDK에서 확인합니다. 기체 기준은 **X2 Ultra Edition**이며 실행 경로를 확인한 모션 없는 장치 조회는 허용하고 명시적인 제어 요청은 현재 프로젝트 지침과 control 스킬의 설치 계약 및 기존 보호를 따릅니다. 설치 요청 자체는 로봇 실행 요청이 아닙니다.
 
 **AI 설치 안내:** 설치, 업데이트 요청에는 [INSTALL_FOR_AGENTS.md](INSTALL_FOR_AGENTS.md)를 읽고 실제 설치, 가능한 검사, 첫 사용 안내까지 수행하세요. 저장소 링크를 읽는 것만으로 환경 변경을 요청받은 것은 아닙니다.
 
 공개 저장소: [https://github.com/dosigner/agibot-x2-skill](https://github.com/dosigner/agibot-x2-skill). 아래 스킬 ZIP을 받거나 저장소를 clone할 수 있습니다. Release 자산은 [Releases 페이지](https://github.com/dosigner/agibot-x2-skill/releases)에서 확인합니다.
+
+1.2.1에서는 [실제 Codex 요청 평가](docs/BEHAVIOR_VALIDATION.md), 독립 설치 시의 역투영/관절 검사, 프로젝트별 버전 적용 범위와 전문 스킬 설치 안내를 보완했다. 모델을 실행하는 행동 평가는 오프라인 CI 검사와 별도로 수행한다.
 
 ## 분야별 스킬 10개 추가
 
@@ -26,11 +28,11 @@ for skill in skills/agibot-x2-*; do
 done
 ```
 
-기존 설치와 차이를 확인한 의도적 업데이트에는 `--backup-existing`을 추가한다. 각 스킬의 ZIP과 checksum은 `dist/<skill>.zip` 형식이다. 원래 interface ZIP에는 다른 스킬이 들어 있지 않다. 배포 버전 **1.2.0**과 설치 기준 **AimDK 1.0.0**은 별개다. 과거 장치 관측은 현재 동작을 보장하지 않는다.
+기존 설치와 차이를 확인한 의도적 업데이트에는 `--backup-existing`을 추가한다. 각 스킬의 ZIP과 checksum은 `dist/<skill>.zip` 형식이다. 원래 interface ZIP에는 다른 스킬이 들어 있지 않다. 배포 버전 **1.2.1**과 설치 기준 **AimDK 1.0.0**은 별개다. 과거 장치 관측은 현재 동작을 보장하지 않는다.
 
 ## 다운로드
 
-[스킬 ZIP](dist/agibot-x2-interfaces.zip) / [SHA-256](dist/agibot-x2-interfaces.zip.sha256) / [버전 표시 ZIP](dist/agibot-x2-interfaces-1.2.0.zip)
+[스킬 ZIP](dist/agibot-x2-interfaces.zip) / [SHA-256](dist/agibot-x2-interfaces.zip.sha256) / [버전 표시 ZIP](dist/agibot-x2-interfaces-1.2.1.zip)
 
 스킬 ZIP에는 자체 검증기가 포함된 `agibot-x2-interfaces/` 폴더 하나가 들어 있습니다. 전체 소스 패키지나 저장소 clone에는 `tools/install_skill.py`, 테스트와 안내 문서도 있습니다. GitHub가 자동 생성하는 “Source code” 압축파일은 소스 폴더이며 스킬 ZIP과 다릅니다.
 
@@ -46,7 +48,7 @@ AI가 저장소와 로컬 파일 실행 기능에 접근할 수 있어야 합니
 
 ## 직접 설치하기
 
-Python 3.10 이상이 필요하며 추가 Python 패키지는 사용하지 않습니다. 아래 명령은 Linux/macOS 셸 문법입니다. 1.2.0 패키지와 설치 검사는 macOS에서 수행하고 CI는 Linux를 검사합니다. Windows와 클라이언트 자동 발견은 별도 검증이 필요합니다.
+Python 3.10 이상이 필요하며 추가 Python 패키지는 사용하지 않습니다. 아래 명령은 Linux/macOS 셸 문법입니다. 1.2.1 패키지와 설치 검사는 macOS에서 수행하고 CI는 Linux를 검사합니다. Windows와 클라이언트 자동 발견은 별도 검증이 필요합니다.
 
 ```bash
 git clone https://github.com/dosigner/agibot-x2-skill.git
@@ -66,7 +68,7 @@ Claude Code는 `--client claude`, Cursor는 `--client cursor`로 바꿉니다. �
 ```bash
 sha256sum -c agibot-x2-interfaces.zip.sha256 &&
 python3 -m zipfile -e agibot-x2-interfaces.zip x2-unpacked &&
-python3 x2-unpacked/agibot-x2-interfaces/scripts/verify.py --expected-version 1.2.0
+python3 x2-unpacked/agibot-x2-interfaces/scripts/verify.py --expected-version 1.2.1
 ```
 
 macOS에서는 체크섬 명령을 `shasum -a 256 -c`로 바꿉니다. 체크섬이 OK이고 검증기가 `passed: true`일 때 폴더 전체를 아래 경로로 옮기세요. 같은 폴더가 이미 있으면 보존하고 소스 설치기로 업데이트합니다. 스킬 ZIP에는 `tools/install_skill.py`가 없습니다.
@@ -84,7 +86,7 @@ Cursor는 공통 경로도 발견하므로 설치기가 같은 범위의 `.agent
 Codex 프로젝트 설치 예입니다.
 
 ```bash
-python3 .agents/skills/agibot-x2-interfaces/scripts/verify.py --expected-version 1.2.0
+python3 .agents/skills/agibot-x2-interfaces/scripts/verify.py --expected-version 1.2.1
 python3 .agents/skills/agibot-x2-interfaces/scripts/lookup.py --feature 4.1 --sensor rgbd --language python
 ```
 
@@ -116,7 +118,7 @@ flowchart LR
 
 5개 모듈, 23개 기능, 36개 공식 예제 묶음, 93개 타입 이름의 공식 링크를 제공합니다. 제조사 메시지 정의 원문, 엔드포인트 표, 원문 HTML, 관절, FOV 사양표와 이전 원문 포함 ZIP은 제외했습니다. URL과 짧은 이름은 탐색 정보이며 외부 페이지에는 해당 출처의 조건이 적용됩니다.
 
-이번 검사와 모델 평가 결과는 [검증 보고서](docs/VALIDATION.md)에 기록합니다. 이전 1.0.1의 결과를 1.2.0의 모든 동작에 대한 검증으로 사용하지 않습니다. Cursor GUI, 모델 호출과 실장비 검증은 미실시입니다. ROS 빌드, 센서 수신, 모션은 스킬 설치와 별개의 검사입니다.
+이번 검사와 모델 평가 결과는 [검증 보고서](docs/VALIDATION.md)에 기록합니다. 이전 1.0.1의 결과를 1.2.1의 모든 동작에 대한 검증으로 사용하지 않습니다. Cursor GUI, 모델 호출과 실장비 검증은 미실시입니다. ROS 빌드, 센서 수신, 모션은 스킬 설치와 별개의 검사입니다.
 
 ## 라이선스
 

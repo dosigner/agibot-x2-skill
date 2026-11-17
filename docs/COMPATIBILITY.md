@@ -9,3 +9,7 @@ This is a local skill-folder package, not a Cursor marketplace plugin. Python 3.
 ## 1.2.0 specialist skills
 
 The ten specialist skills use the same discovery directories and invocation prefixes. Select one with `--skill`; each carries a standalone verifier and relative references. The interface lookup is intentionally absent from specialist skills. Runtime/package tests on macOS do not prove automatic Codex, Claude Code or Cursor discovery in a running session.
+
+## 1.2.1 request-level validation
+
+Fresh Codex CLI sessions selected and read all eleven skills across the request suite. Standalone sensors/control installations also passed. See [the behavior report](BEHAVIOR_VALIDATION.md) for fixtures, observed reads and limits. This does not establish desktop picker UI, Claude/Cursor model behavior or cross-model reliability.

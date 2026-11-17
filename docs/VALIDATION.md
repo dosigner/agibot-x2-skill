@@ -1,4 +1,10 @@
-# Validation record for 1.2.0
+# Validation record for 1.2.1
+
+2026-11-17. [Behavior validation](BEHAVIOR_VALIDATION.md) reports fresh Codex CLI requests, observed skill reads and independent artifact checks. Baseline: 13/13 cases. Revised: 16/16 unique cases, with two additional control rechecks after notation cleanup. All 11 skills were exercised; two negative cases selected no X2 skill. This is a small-sample observation, not a general reliability estimate or a no-skill comparison.
+
+The ordinary 26-case offline suite passed on macOS, including all specialist installation/backup/integrity tests. All 11 skill frontmatter checks also passed. The model probes are opt-in and are not silently executed by CI. The 1.2.1 public behavior cases and numeric oracles contain synthetic data only. Automatic selection was observed in fresh Codex CLI sessions; desktop picker UI and Claude/Cursor model invocation remain untested.
+
+## Historical 1.2.0 record
 
 2026-11-17, macOS, local source validation. Hardware and the shared dashboard were not accessed.
 

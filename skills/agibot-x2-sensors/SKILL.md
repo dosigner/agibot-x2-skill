@@ -7,7 +7,7 @@ description: X2 Ultra RGB-D, 스테레오, LiDAR, IMU의 인코딩, 깊이 단�
 
 ## 먼저 고정할 계약
 
-AimDK 1.0.0과 현재 설치를 기준으로 스트림별 타입, frame, stamp 생성점, encoding, width/height/step, CameraInfo, QoS, 단위의 출처를 기록한다. SDK 최신 문서의 변경을 구형 기체에 자동 적용하지 않는다. [보정과 시간에서 얻은 교훈](references/lessons.md)을 해당 센서에 맞춰 읽는다.
+원 프로젝트의 AimDK 1.0.0 기록과 현재 설치를 구분하고, 확인된 설치 버전을 기준으로 스트림별 타입, frame, stamp 생성점, encoding, width/height/step, CameraInfo, QoS, 단위의 출처를 기록한다. SDK 최신 문서의 변경을 구형 기체에 자동 적용하지 않는다. [보정과 시간에서 얻은 교훈](references/lessons.md)을 해당 센서에 맞춰 읽는다.
 
 - **RGB-D:** `16UC1`은 저장 형식이다. `depth_scale`의 근거가 확인된 프로파일에만 m 변환을 적용한다. raw zero/invalid mask를 보존하고 컬러맵의 min/max와 clipping을 거리 측정과 구분한다.
 - **정합:** 드라이버의 depth registration 활성화, 같은 K/P, 같은 해상도는 물체 경계 일치의 증거가 아니다. RGB와 depth의 원본 frame/왜곡 계수/취득 시각을 각각 유지하고, 여러 거리와 화면 위치의 표적에서 잔차를 px 및 m로 측정한다.
@@ -15,6 +15,10 @@ AimDK 1.0.0과 현재 설치를 기준으로 스트림별 타입, frame, stamp �
 - **PointCloud2:** fields의 offset/datatype과 point_step, row_step, endian으로 디코딩한다. 필드 사이 padding을 고려한다. ring의 최대값으로 물리 채널 수를 추론하지 않는다.
 - **TF:** `T(A←B)`는 B의 좌표를 A로 옮긴다. 현재 TF에 포함된 장착 회전을 다시 적용하지 않는다. ROS xyzw와 MuJoCo wxyz를 변환 경계에서 명시한다. 서로 다른 frame 이름을 추정 alias로 합치지 않는다.
 - **IMU:** orientation covariance의 -1은 자세 미제공, 0은 오차 0의 증거가 아니다. specific force의 축/부호와 중력 포함 여부를 확인한 뒤 사용한다.
+
+## 역투영의 깊이 정의
+
+독립 설치에서도 깊이 의미를 먼저 확인한다. 왜곡 처리가 끝난 pinhole 영상에서 `x=(u-cx)/fx`, `y=(v-cy)/fy`이며 `u,v,cx,cy,fx,fy`는 같은 픽셀 좌표계다. 광축 깊이 Z라면 `(X,Y,Z)=(xZ,yZ,Z)`이다. 센서 원점부터의 직선 거리 R이라면 `(X,Y,Z)=R(x,y,1)/sqrt(x²+y²+1)`로 다르다. raw/fisheye에 이 식을 직접 쓰거나 FOV만으로 K/P를 대신하지 않는다. 축 방향은 optical frame의 +X 오른쪽/+Y 아래/+Z 전방이며 body frame은 TF로 변환한다. 알려지지 않은 scale, 비유한 입력, 비양수 초점거리/scale은 거부하고 결측 raw와 유효 거리를 구분한다.
 
 ## 표시와 추정
 

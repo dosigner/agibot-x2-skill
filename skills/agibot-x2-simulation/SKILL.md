@@ -7,7 +7,7 @@ description: X2 Ultra MuJoCo/TrackingSim, 하체 강화학습, CPU/GPU 비교, �
 
 ## 실행 기준
 
-이 프로젝트의 현재 사용자 선택은 **MuJoCo 4.0.x**다. Python package뿐 아니라 native engine과 MuJoCo Warp 버전을 확인한다. 과거 3.x 실험은 역사 자료이며 새 실행 버전의 근거가 아니다. upstream lock 충돌은 별도 환경에서 명시하고 원본 package metadata를 수정해 호환되는 것처럼 만들지 않는다.
+원래 aimdk 프로젝트의 사용자 선택은 **MuJoCo 4.0.x**다. 다른 프로젝트의 명시적 버전 요구를 이 과거 선택으로 덮어쓰지 않는다. 현재 요청 버전을 기준으로 호환성을 확인하며 임의 업그레이드/다운그레이드를 하지 않는다. Python package뿐 아니라 native engine과 MuJoCo Warp 버전을 확인한다. 과거 3.x 실험은 역사 자료이며 새 실행 버전의 근거가 아니다. upstream lock 충돌은 별도 환경에서 명시하고 원본 package metadata를 수정해 호환되는 것처럼 만들지 않는다.
 
 [실험과 실패 교훈](references/lessons.md)을 읽고 모델, scene/XML/mesh hash, 제어 계약, dt/control decimation, solver, contact 설정, 초기 qpos/qvel, seed, 종료식과 평가 시계를 고정한다. 기존 HoloMotion/checkpoint와 원본 자산은 보존한다. 명령 성공/학습 exit 0은 정책 성능 성공이 아니다.
 

@@ -1,0 +1,238 @@
+[
+  {
+    "id": "runtime",
+    "prompt": "X2 PC2에서 aimdk_msgs import가 실패해. snapshot.json을 읽고 진단해줘. 결과를 result.json에 diagnosis, next_checks, live_verified 필드로 저장해줘. 장치 접속이나 설치는 하지 마.",
+    "expected_skills": [
+      "agibot-x2-runtime"
+    ],
+    "files": {
+      "snapshot.json": "{\"board\": \"PC2\", \"soc_index\": 1, \"aimdk\": \"1.0.0\", \"python\": \"3.10\", \"sdk_prebuilt\": {\"msg\": true, \"generated_python\": false}, \"firmware_common\": {\"prefix\": \"/agibot/software/common\", \"generated_python\": true, \"type_support\": true}, \"publisher_count\": 1, \"samples_in_8s\": 0}"
+    },
+    "checks": {
+      "json_equals": {
+        "live_verified": false
+      }
+    }
+  },
+  {
+    "id": "sensors",
+    "prompt": "X2 RGB-D 좌표 변환용 geometry.py를 구현해줘. 함수 deproject(raw, u, v, calibration)는 픽셀 중심 좌표에서 카메라 XYZ(m) tuple을 반환해야 해. 주어진 calibration에는 fx, fy, cx, cy, scale_m_per_raw, depth_kind, rectified가 있어. raw=0은 결측으로 None을 반환하고, 단위/카메라 모델이 불충분하면 ValueError로 거부해. depth_kind에는 optical_z 또는 range가 올 수 있고 원시 fisheye의 왜곡 보정은 구현 범위 밖이야. 실제 센서나 외부 문서는 사용하지 말고 제공된 계약으로 구현 및 자체 검사를 해줘.",
+    "expected_skills": [
+      "agibot-x2-sensors"
+    ],
+    "files": {},
+    "checks": {
+      "python": "sensors"
+    }
+  },
+  {
+    "id": "voice",
+    "prompt": "X2 카니스가 깨어난 뒤 조용해. timeline.json을 분석해서 result.json에 conversation_success, speaker_failure_proven, last_confirmed_stage, next_measurements를 기록해줘. 실제 기체에는 접속하지 마.",
+    "expected_skills": [
+      "agibot-x2-voice"
+    ],
+    "files": {
+      "timeline.json": "{\"board\": \"PC2\", \"soc_index\": 1, \"wake_match\": true, \"lease_granted\": true, \"live_connected\": true, \"input_pcm_bytes\": null, \"provider_activity_end\": null, \"turns\": 0, \"pcm_chunks\": 0, \"end_reason\": \"idle\", \"pc3_play_state\": null, \"heard_by_operator\": null}"
+    },
+    "checks": {
+      "json_equals": {
+        "conversation_success": false,
+        "speaker_failure_proven": false
+      }
+    }
+  },
+  {
+    "id": "face",
+    "prompt": "X2 얼굴 영상 배포 전 사양을 검토해줘. snapshot.json과 원본 1920×1080 영상을 기준으로 화면을 잘라내지 않는 제작안을 result.json에 content_width, content_height, fit_width, fit_height, padding_top, padding_bottom, panel_refresh_hz, physical_display_verified 필드로 저장해줘. 영상 생성과 장치 접속은 하지 마.",
+    "expected_skills": [
+      "agibot-x2-face"
+    ],
+    "files": {
+      "snapshot.json": "{\"board\": \"PC3\", \"soc_index\": 2, \"drm_mode\": \"480x800\", \"player_dimensions\": [800, 480], \"orientation\": \"landscape_right\", \"content_export_fps\": 60, \"panel_refresh_measurement\": null, \"play_api_accepted\": true, \"physical_observation\": null}"
+    },
+    "checks": {
+      "json_equals": {
+        "content_width": 800,
+        "content_height": 480,
+        "fit_width": 800,
+        "fit_height": 450,
+        "padding_top": 15,
+        "padding_bottom": 15,
+        "panel_refresh_hz": null,
+        "physical_display_verified": false
+      }
+    }
+  },
+  {
+    "id": "hri",
+    "prompt": "X2 머리를 세 번 두드렸는데 기록이 TOUCH만 반복됐어. evidence.json을 보고 result.json에 classified_gesture, force_newtons, can_claim_two_push_accuracy와 다음 시험 제안을 기록해줘. 동작이나 재생을 실행하지 마.",
+    "expected_skills": [
+      "agibot-x2-hri"
+    ],
+    "files": {
+      "evidence.json": "{\"touch\": {\"events\": [\"TOUCH\", \"TOUCH\", \"TOUCH\", \"TOUCH\", \"TOUCH\", \"TOUCH\", \"TOUCH\", \"TOUCH\"], \"channels\": [0, 0, 0, 0, 0, 0, 0, 0], \"duration_s\": 3}, \"imu\": {\"peak_vector_difference_m_s2\": 7.996, \"gravity_removed\": false, \"contact_onsets\": null, \"mode_same_window\": null}, \"operator_report\": \"\\ub450 \\ubc88 \\ubc00\\uc5c8\\ub2e4\\uace0 \\ub098\\uc911\\uc5d0 \\ubcf4\\uace0\\ud588\\uc74c\"}"
+    },
+    "checks": {
+      "json_equals": {
+        "classified_gesture": "contact_only",
+        "force_newtons": null,
+        "can_claim_two_push_accuracy": false
+      }
+    }
+  },
+  {
+    "id": "slam",
+    "prompt": "X2 저장 지도 좌표를 현재 몸체 위치로 변환하는 pose.py를 구현해줘. 함수 base_in_nav(T_N_M, T_M_O, T_O_I, T_B_I)는 4×4 중첩 리스트를 받아 T_N_B를 돌려줘. T_A_B는 B→A이고 길이는 m야. 모든 입력은 rigid transform이어야 하며 유한값, shape, 마지막 행, 회전 직교성과 det=+1을 검증하고 잘못된 값은 ValueError로 거부해. 표준 라이브러리만 써줘. 현재 nav는 자체 개발이며 제조사 no_nav 설정은 바꾸지 않아. 함수 자체 검사까지 해줘.",
+    "expected_skills": [
+      "agibot-x2-slam-navigation"
+    ],
+    "files": {},
+    "checks": {
+      "python": "slam"
+    }
+  },
+  {
+    "id": "control",
+    "prompt": "X2 프리셋 실행 결과 분류 함수를 ledger.py에 구현해줘. classify(record)는 record의 sent, response_accepted, observed_running, observed_finished, cleanup_confirmed를 읽어 not_sent/accepted/running/finished/unknown 중 하나를 반환해. 전송 뒤 수락 응답이 유실됐거나 종료 뒤 cleanup이 미확인이면 unknown이어야 해. bool이 아닌 필드는 ValueError로 거부해. can_retry_motion(record)는 전송이 없었던 경우에만 True이고 전송 후에는 False야. 로봇 없이 순수 로직과 자체 검사만 수행해줘.",
+    "expected_skills": [
+      "agibot-x2-control"
+    ],
+    "files": {},
+    "checks": {
+      "python": "control"
+    }
+  },
+  {
+    "id": "dashboard",
+    "prompt": "X2 공유 8908의 재시작 요청을 검토해줘. coordination.json을 읽고 지금 할 수 있는 다음 조치를 result.json의 restart_allowed, action, reasons로 정리해줘. 실제 서버 조회/재시작은 하지 마.",
+    "expected_skills": [
+      "agibot-x2-dashboard"
+    ],
+    "files": {
+      "coordination.json": "{\"restart_coordination\": true, \"registered_work\": [], \"active_chat_inventory\": \"unknown\", \"server_owner\": \"known\", \"locomotion\": \"idle\", \"slam\": \"idle\"}"
+    },
+    "checks": {
+      "json_equals": {
+        "restart_allowed": false
+      }
+    }
+  },
+  {
+    "id": "motion",
+    "prompt": "X2 모션 비교 뷰어에서 원본 영상, 사람 자세, GMR, TrackingSim을 같은 시각으로 보여주려고 해. fixture.json을 보고 현재 표시할 수 있는 비교 시각과 물리 상태를 result.json에 comparison_time_s, simulation_available, source_frame_verified, reasons로 기록해줘. 실제 디코딩 콜백 값은 관측값이고 요청 currentTime과 다를 수 있어.",
+    "expected_skills": [
+      "agibot-x2-motion-retargeting"
+    ],
+    "files": {
+      "fixture.json": "{\"requested_currentTime\": 1.766666667, \"decoded_mediaTime\": 1.733333333, \"pts_tolerance_s\": 1e-06, \"pose_samples\": [{\"source_pts_s\": 1.733333333, \"t_s\": 0.9}, {\"source_pts_s\": 1.766666667, \"t_s\": 0.933333333}], \"simulation_terminated_at_s\": 0.62}"
+    },
+    "checks": {
+      "json_equals": {
+        "comparison_time_s": 0.9,
+        "simulation_available": false,
+        "source_frame_verified": true
+      }
+    }
+  },
+  {
+    "id": "simulation",
+    "prompt": "X2 TrackingSim 실험을 평가해줘. run.json을 읽고 result.json에 original_success, modified_success, exact_resume_possible, hardware_eligible, reasons를 기록해줘. 새로운 학습이나 시뮬레이터 실행은 하지 마.",
+    "expected_skills": [
+      "agibot-x2-simulation"
+    ],
+    "files": {
+      "run.json": "{\"runtime\": {\"python_mujoco\": \"4.0.1\", \"native_mujoco\": \"4.0.1\", \"warp_mujoco\": \"4.0.1\"}, \"physics_dt_s\": 0.001, \"control_dt_s\": 0.02, \"target_duration_s\": 2.6, \"recorded_duration_s\": 2.6, \"modified_reference_first_violation_s\": null, \"original_reference_first_violation_s\": 0.477, \"checkpoint_fields\": [\"model\", \"optimizer\"], \"physical_validation\": false}"
+    },
+    "checks": {
+      "json_equals": {
+        "original_success": false,
+        "modified_success": true,
+        "exact_resume_possible": false,
+        "hardware_eligible": false
+      }
+    }
+  },
+  {
+    "id": "interfaces",
+    "prompt": "X2 Ultra RGB-D 인터페이스의 공식 Python 예제 링크를 찾아줘. 오프라인이므로 사이트를 열지 말고 설치된 탐색 도구만 실행해. result.json에 feature_id, contracts_verified, official_urls를 저장해줘. 링크를 찾은 것과 필드 계약 확인을 구분해줘.",
+    "expected_skills": [
+      "agibot-x2-interfaces"
+    ],
+    "files": {},
+    "checks": {
+      "json_equals": {
+        "feature_id": "4.1",
+        "contracts_verified": false
+      }
+    }
+  },
+  {
+    "id": "negative",
+    "prompt": "회의록 문장을 짧게 다듬어 result.txt에 저장해줘: \"다음 주 화요일 오후 세 시에 팀 회의를 개최할 예정이며, 각 담당자는 진행 상황에 관한 자료를 준비하여 주시기 바랍니다.\"",
+    "expected_skills": [],
+    "files": {},
+    "checks": {
+      "text_file": "result.txt"
+    }
+  },
+  {
+    "id": "scope",
+    "prompt": "다른 팀의 X2 프로젝트에 적용할 검토야. 이 프로젝트는 AimDK 1.1.0으로 업그레이드했고 MuJoCo 3.11 유지가 사용자 요구야. 이번 요청은 오프라인 설정 검토뿐이고 로봇 접속은 없어. 다른 프로젝트에서 사용하던 스킬 패키지가 이 요구와 충돌하는지 검토해서 result.json에 must_downgrade_aimdk, must_upgrade_mujoco, user_request_preserved, reasons를 기록해줘.",
+    "expected_skills": [
+      "agibot-x2-interfaces",
+      "agibot-x2-simulation"
+    ],
+    "files": {},
+    "checks": {
+      "json_equals": {
+        "must_downgrade_aimdk": false,
+        "must_upgrade_mujoco": false,
+        "user_request_preserved": true
+      }
+    }
+  },
+  {
+    "id": "standalone-sensors",
+    "prompt": "X2 RGB-D 좌표 변환용 geometry.py를 구현해줘. 함수 deproject(raw, u, v, calibration)는 픽셀 중심 좌표에서 카메라 XYZ(m) tuple을 반환해야 해. 주어진 calibration에는 fx, fy, cx, cy, scale_m_per_raw, depth_kind, rectified가 있어. raw=0은 결측으로 None을 반환하고, 단위/카메라 모델이 불충분하면 ValueError로 거부해. depth_kind에는 optical_z 또는 range가 올 수 있고 원시 fisheye의 왜곡 보정은 구현 범위 밖이야. 실제 센서나 외부 문서는 사용하지 말고 제공된 계약으로 구현 및 자체 검사를 해줘.",
+    "expected_skills": [
+      "agibot-x2-sensors"
+    ],
+    "files": {},
+    "checks": {
+      "python": "sensors"
+    },
+    "installed_skills": [
+      "agibot-x2-sensors"
+    ]
+  },
+  {
+    "id": "standalone-control",
+    "prompt": "X2 Ultra 관절 궤적 검토야. 제공된 실험 계약에서 q(t)=4u(1-u) rad, u=t/T, T=1 s, 0≤t≤T이고 허용 범위는 [-0.5, 0.5] rad야. 다른 축의 head pitch 한계는 N/A이고 좌우 hip yaw는 아직 각각 확인하지 않았어. result.json에 maximum_q_rad, trajectory_passes, unknown_limit_is_zero, symmetric_hip_limits_allowed와 이유를 기록해줘. 실제 기체나 외부 문서는 조회하지 마.",
+    "expected_skills": [
+      "agibot-x2-control"
+    ],
+    "installed_skills": [
+      "agibot-x2-control"
+    ],
+    "files": {},
+    "checks": {
+      "json_equals": {
+        "maximum_q_rad": 1.0,
+        "trajectory_passes": false,
+        "unknown_limit_is_zero": false,
+        "symmetric_hip_limits_allowed": false
+      }
+    }
+  },
+  {
+    "id": "negative-simulation",
+    "prompt": "로봇과 무관한 질량 1 kg, 스프링 상수 4 N/m의 1차원 무감쇠 조화진동자 주기를 계산해 result.json에 period_s와 assumptions를 저장해줘. 시뮬레이터 설치나 실행은 필요 없어.",
+    "expected_skills": [],
+    "files": {},
+    "checks": {
+      "json_close": {
+        "period_s": 3.141592653589793
+      }
+    }
+  }
+]

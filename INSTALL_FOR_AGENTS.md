@@ -2,7 +2,7 @@
 
 Use this procedure when the user requests installation or an update. It applies to Codex, Claude Code and Cursor. Preserve decisions already made in the conversation. Read the repository README for product scope; do not stop at summarizing it.
 
-## Selecting specialist skills in 1.2.0
+## Selecting specialist skills in 1.2.1
 
 The default installer continues to select `agibot-x2-interfaces`. Use `--skill <name>` for a skill from this checkout, or `--source <extracted-skill-folder>` for a selected ZIP. Use the selected skill name in destination and release asset names throughout this guide. Each ZIP contains exactly its own skill root. The specialist skills have `scripts/verify.py` and authored references, but no `lookup.py`; run the lookup only for the interface skill.
 
@@ -54,14 +54,14 @@ Some client sandboxes protect `.agents` or `.claude` even inside the project. If
 
 ## 4. Check the result
 
-Run the installed verifier, then an offline lookup from a different working directory:
+Run the installed verifier for every selected skill. Only for `agibot-x2-interfaces`, also run the offline lookup from a different working directory:
 
 ```bash
 python3 "$INSTALLED/scripts/verify.py" --expected-version "$VERSION"
 python3 "$INSTALLED/scripts/lookup.py" --feature 4.1 --sensor rgbd --language python
 ```
 
-Require `passed: true` and a feature `4.1` result with `contracts_included: false` and the selected RGB-D example links. Confirm that `SKILL.md`, routing references and lookup tools exist at that installed path. This public version contains official links instead of manufacturer definitions and specification tables. It works offline for installation and link selection; exact X2 contracts require the selected official page or an installed SDK.
+Require `passed: true` for every skill. For the interface skill additionally require feature `4.1`, `contracts_included: false` and the selected RGB-D links. For a specialist require `SKILL.md`, `references/lessons.md` and `references/evidence.md`; it intentionally has no lookup tool. This public version contains official links instead of manufacturer definitions and specification tables. It works offline for installation and link selection; exact X2 contracts require the selected official page or an installed SDK.
 
 Separately test client discovery/invocation if the current client exposes a skill selector or an authorized new session. If a restart/new session is needed, explain how to open the target project and invoke the skill. Reading `SKILL.md` directly or completing an offline lookup does not prove automatic discovery. Keep ROS/SDK build, live sensor reception and robot motion marked untested unless independently performed under the user's task. Installation does not request robot access.
 
@@ -71,8 +71,8 @@ Reply in the user's language with:
 
 1. Client, version, provenance, scope and absolute installation path; backup path if used.
 2. Checks actually run and their results. Separate file placement/integrity, offline lookup, client discovery and robot validation.
-3. One copyable first request, using the client's invocation prefix: “Explain the AGIBOT X2 Ultra RGB-D data flow using the skill and the linked official documentation; do not access a robot.”
-4. Three short examples: learning interfaces; editing an existing `camera_listener.py` while retaining decisions; designing a C++ camera/IMU algorithm with explicit inputs, timing and coordinate frames.
+3. One copyable first request using the selected skill and the client's invocation prefix. For the interface skill, use an RGB-D explanation without robot access.
+4. Give examples relevant to the selected domain; do not route a voice/face/simulation-only installation through the interface lookup.
 5. Any required new-session step or unresolved duplicate/conflict.
 
 If tools, network, authentication or permissions prevent installation, state the exact unperformed step and give the minimum manual action from the README. Do not claim completion from the existence of a README or from planned commands.

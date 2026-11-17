@@ -1,15 +1,15 @@
 {
   "name": "agibot-x2-control",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "distribution": "authored-field-guidance",
   "license": "MulanPSL-2.0",
   "source_document_version": "AimDK 1.0.0 field baseline; official web links are mutable; no manufacturer document snapshot included",
   "files": {
     "LICENSE": "d5777bea50dc2cd111845d8a9c51ab990d188ce343b843e5ad3e653b5fa8fdab",
     "NOTICE.md": "b6f01f1e4cd8c60136daaf3393442fa8761b0b6368c42a51ff416740523e9053",
-    "SKILL.md": "4eaecb55cd8b29cb24b487ea54fdffce3d1dc05cdf139cbfbc9665c8161b476f",
+    "SKILL.md": "601e0fcb6b3bfcecee62084c2607daec624dcf946cf20838700d26d947774715",
     "agents/openai.yaml": "6713b2316c17b2f7fa8cd953719fa9bc36efbd0dd0aca0800025ec2cb5ae35ca",
-    "references/evidence.md": "109eaa8876eb51fcb57295f62d17036bb13153655f2af12494f6aa057a14aa47",
+    "references/evidence.md": "907a5f0283de26d869893b4b4c62fb3cecc4764682a8b300f28cdb99212dc92b",
     "references/lessons.md": "2103f13c83316399f23e1f4157abb5ae4aee8bd2bdea1d58d08cca590f37233e",
     "scripts/verify.py": "b3570029f19a033d28b51cc3c5b249587f2d4de96a9ac5ab4719652ea5a1d895"
   }

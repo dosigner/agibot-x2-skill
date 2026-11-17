@@ -12,3 +12,5 @@
 | `output/x2_rgbd_alignment_20261116/measurements.json` | `ccb91b5df2e8c3da6c7c99a353fc3b481f2e0c064f102bbe937fbfabd44b9be9` |
 | `output/x2_depth_completion_cvpr2018/vision_qa_20261116/x2_replay/verification.json` | `93cf80773cf7db79d654b7828cac53a0549817208c230eb8b136df311b8f736c` |
 | `docs/devices/X2_SELF_NAV_20261117.md` | `a19628cabb84b6409e2167c62e3118d2fe9bd7ab89325c09ea7c2cc0edae30e2` |
+
+1.2.1의 독립 설치 보완은 기존 공개 [interface 참고문서](https://github.com/dosigner/agibot-x2-skill/blob/a43a439244585fe2d5820d83625e32401111c065/skills/agibot-x2-interfaces/references/workflows.md)의 적용 조건을 전문 스킬에도 포함한 것이다. 새 실기 측정 결과가 아니다.
