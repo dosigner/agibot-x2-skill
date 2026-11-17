@@ -1,0 +1,4 @@
+interface:
+  display_name: "X2 SLAM과 지도 위치 추정"
+  short_description: "X2 SLAM과 지도 위치 추정의 설치 근거와 실패 경계를 확인합니다"
+  default_prompt: "$agibot-x2-slam-navigation 스킬로 현재 작업의 계약과 근거를 확인하고 요청 범위에서 검증해줘."

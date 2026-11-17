@@ -1,0 +1,16 @@
+{
+  "name": "agibot-x2-dashboard",
+  "version": "1.2.0",
+  "distribution": "authored-field-guidance",
+  "license": "MulanPSL-2.0",
+  "source_document_version": "AimDK 1.0.0 field baseline; official web links are mutable; no manufacturer document snapshot included",
+  "files": {
+    "LICENSE": "d5777bea50dc2cd111845d8a9c51ab990d188ce343b843e5ad3e653b5fa8fdab",
+    "NOTICE.md": "b6f01f1e4cd8c60136daaf3393442fa8761b0b6368c42a51ff416740523e9053",
+    "SKILL.md": "692b684ba99aa85d7a97ae0001f2af6faa8f17b3a87e9607f49ae6e5c0e96907",
+    "agents/openai.yaml": "69fa24b226fe3dc516f31e0d251d89feaf0aa03578a1285ef18db217967e063d",
+    "references/evidence.md": "24807d066c05cea5759303fdb8096ced802bae986a07833aec332a88c7124152",
+    "references/lessons.md": "cef8597c075d8cb9efb2694a3c3d9e19ffe8bf884d583b1b5a3cfe6bbf74b461",
+    "scripts/verify.py": "b3570029f19a033d28b51cc3c5b249587f2d4de96a9ac5ab4719652ea5a1d895"
+  }
+}

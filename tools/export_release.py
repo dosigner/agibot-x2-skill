@@ -30,7 +30,7 @@ def public_paths(root):
 
 def scan_text(text):
     patterns = {
-        'local author path': r'/(?:home/d[j]|tmp/agibot[-])[^\s)"\x27]*',
+        'local author path': r'/(?:Users/[^/\s]+|home/d[j]|tmp/agibot[-])[^\s)"\x27]*',
         'GitHub token': r'\b(?:gh[pousr]_|github_pat_)[A-Za-z0-9_]{20,}',
         'API key': r'\bsk-(?:proj-|ant-)?[A-Za-z0-9_-]{24,}',
         'private key': r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----',

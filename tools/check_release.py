@@ -33,26 +33,35 @@ def check(root):
         observed = {rel.as_posix(): hashlib.sha256((root / rel).read_bytes()).hexdigest() for rel in paths}
         if inventory.get('version') != version or inventory.get('files') != observed:
             errors.append('Public source inventory does not match selected files')
-    expected = {p.relative_to(skill).as_posix(): p.read_bytes() for p in skill.rglob('*')
-                if p.is_file() and '__pycache__' not in p.parts and p.suffix != '.pyc'}
-    digests = []
-    for name in ('agibot-x2-interfaces.zip', 'agibot-x2-interfaces-' + version + '.zip'):
-        archive = root / 'dist' / name
-        digest = hashlib.sha256(archive.read_bytes()).hexdigest()
-        digests.append(digest)
-        if archive.with_suffix('.zip.sha256').read_text(encoding='utf-8').strip() != digest + '  ' + name:
-            errors.append('ZIP checksum mismatch: ' + name)
-        with zipfile.ZipFile(archive) as zf:
-            names = zf.namelist()
-            wanted = [skill.name + '/' + name for name in expected]
-            if len(names) != len(set(names)) or set(names) != set(wanted):
-                errors.append('ZIP file set mismatch: ' + name)
-            for rel, data in expected.items():
-                member = skill.name + '/' + rel
-                if member not in names or zf.read(member) != data:
-                    errors.append('ZIP content mismatch: ' + member)
-    if len(set(digests)) != 1:
-        errors.append('Stable and versioned skill ZIPs differ')
+    skill_file_count = 0
+    for skill in sorted((root / 'skills').iterdir()):
+        if not (skill / 'SKILL.md').is_file():
+            continue
+        errors.extend(module.verify(skill, version)['errors'])
+        front = (skill / 'SKILL.md').read_text(encoding='utf-8')
+        if not re.match(r'\A---\nname: ' + re.escape(skill.name) + r'\ndescription: .+\n---\n', front):
+            errors.append('Invalid skill frontmatter: ' + skill.name)
+        expected = {p.relative_to(skill).as_posix(): p.read_bytes() for p in skill.rglob('*')
+                    if p.is_file() and '__pycache__' not in p.parts and p.suffix != '.pyc'}
+        digests = []
+        for name in (skill.name + '.zip', skill.name + '-' + version + '.zip'):
+            archive = root / 'dist' / name
+            digest = hashlib.sha256(archive.read_bytes()).hexdigest()
+            digests.append(digest)
+            if archive.with_suffix('.zip.sha256').read_text(encoding='utf-8').strip() != digest + '  ' + name:
+                errors.append('ZIP checksum mismatch: ' + name)
+            with zipfile.ZipFile(archive) as zf:
+                names = zf.namelist()
+                wanted = [skill.name + '/' + name for name in expected]
+                if len(names) != len(set(names)) or set(names) != set(wanted):
+                    errors.append('ZIP file set mismatch: ' + name)
+                for rel, data in expected.items():
+                    member = skill.name + '/' + rel
+                    if member not in names or zf.read(member) != data:
+                        errors.append('ZIP content mismatch: ' + member)
+        if len(set(digests)) != 1:
+            errors.append('Stable and versioned skill ZIPs differ')
+        skill_file_count += len(expected)
     links = 0
     for rel in paths:
         if rel.suffix != '.md':
@@ -69,7 +78,7 @@ def check(root):
             resolved = (file.parent / path).resolve()
             if not resolved.is_relative_to(root.resolve()) or not resolved.exists():
                 errors.append('Broken/local link: ' + rel.as_posix() + ' -> ' + target)
-    return dict(passed=not errors, version=version, skill_files=len(expected), public_files=len(paths),
+    return dict(passed=not errors, version=version, skill_files=skill_file_count, public_files=len(paths),
                 relative_links_checked=links, privacy_pattern_findings=scan_files(root, paths),
                 raw_source_audit='not_run', errors=errors)
 

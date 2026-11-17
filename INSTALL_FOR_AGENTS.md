@@ -2,6 +2,12 @@
 
 Use this procedure when the user requests installation or an update. It applies to Codex, Claude Code and Cursor. Preserve decisions already made in the conversation. Read the repository README for product scope; do not stop at summarizing it.
 
+## Selecting specialist skills in 1.2.0
+
+The default installer continues to select `agibot-x2-interfaces`. Use `--skill <name>` for a skill from this checkout, or `--source <extracted-skill-folder>` for a selected ZIP. Use the selected skill name in destination and release asset names throughout this guide. Each ZIP contains exactly its own skill root. The specialist skills have `scripts/verify.py` and authored references, but no `lookup.py`; run the lookup only for the interface skill.
+
+For a requested full-set update, iterate the directories under `skills/`, preserving existing installations with the same backup workflow. Installation is per skill; failure does not roll back earlier successful skills. Validate all installed manifests and report any partial result. Do not alter unrelated skills or client settings. Consult [the field catalog](docs/FIELD_KNOWLEDGE.md) for first-use requests in the selected domain.
+
 ## 1. Resolve the destination
 
 Identify the running client, OS, Python 3.10+ executable and target project from the session. Default to the current user project. The temporary download/clone directory is not the target project. Use personal scope only when requested. If there is no identifiable client or project, ask only for that missing information.

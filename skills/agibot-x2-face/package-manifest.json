@@ -1,0 +1,16 @@
+{
+  "name": "agibot-x2-face",
+  "version": "1.2.0",
+  "distribution": "authored-field-guidance",
+  "license": "MulanPSL-2.0",
+  "source_document_version": "AimDK 1.0.0 field baseline; official web links are mutable; no manufacturer document snapshot included",
+  "files": {
+    "LICENSE": "d5777bea50dc2cd111845d8a9c51ab990d188ce343b843e5ad3e653b5fa8fdab",
+    "NOTICE.md": "b6f01f1e4cd8c60136daaf3393442fa8761b0b6368c42a51ff416740523e9053",
+    "SKILL.md": "a82c6b6ca5eb8e137cf2568c2516021fafcd6f2d5c69dd5bca0566af1134b042",
+    "agents/openai.yaml": "12564ef386787537643989f920242204e93200efa7069789b6daed3903574377",
+    "references/evidence.md": "b5b4925c0b030c2875398e5d0f9fdf0fe51b72fc63e2be5f0f055aa2ad3577fd",
+    "references/lessons.md": "51b4cfd42c68e5a1f709224a47bdd73f0e04696110f258d126ec72fa40f1ed0a",
+    "scripts/verify.py": "b3570029f19a033d28b51cc3c5b249587f2d4de96a9ac5ab4719652ea5a1d895"
+  }
+}

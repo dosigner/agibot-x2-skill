@@ -1,0 +1,16 @@
+{
+  "name": "agibot-x2-slam-navigation",
+  "version": "1.2.0",
+  "distribution": "authored-field-guidance",
+  "license": "MulanPSL-2.0",
+  "source_document_version": "AimDK 1.0.0 field baseline; official web links are mutable; no manufacturer document snapshot included",
+  "files": {
+    "LICENSE": "d5777bea50dc2cd111845d8a9c51ab990d188ce343b843e5ad3e653b5fa8fdab",
+    "NOTICE.md": "b6f01f1e4cd8c60136daaf3393442fa8761b0b6368c42a51ff416740523e9053",
+    "SKILL.md": "44830b9b3d6be21cf92ced49d45d0d7fd2004ee75cb617af96469f61519c54d6",
+    "agents/openai.yaml": "7544f1ed62ac02748787e9ad2103a9fcfe5005831c7ab501bc64c7834bb08162",
+    "references/evidence.md": "7c8987e3c744f4c2b5c5ed84a51c31439fef9ab344ed1d999b56d0aec281ee5b",
+    "references/lessons.md": "33025b71fe490037f5b5e9328a83256fab83e92d5b73e9f70501105a3ea39325",
+    "scripts/verify.py": "b3570029f19a033d28b51cc3c5b249587f2d4de96a9ac5ab4719652ea5a1d895"
+  }
+}

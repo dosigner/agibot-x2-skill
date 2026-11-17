@@ -1,0 +1,16 @@
+{
+  "name": "agibot-x2-hri",
+  "version": "1.2.0",
+  "distribution": "authored-field-guidance",
+  "license": "MulanPSL-2.0",
+  "source_document_version": "AimDK 1.0.0 field baseline; official web links are mutable; no manufacturer document snapshot included",
+  "files": {
+    "LICENSE": "d5777bea50dc2cd111845d8a9c51ab990d188ce343b843e5ad3e653b5fa8fdab",
+    "NOTICE.md": "b6f01f1e4cd8c60136daaf3393442fa8761b0b6368c42a51ff416740523e9053",
+    "SKILL.md": "6a45424bc3f32379a7edeb0983ef0d199cbb0fb3d413305e7945d1942a9da751",
+    "agents/openai.yaml": "6fbaa3bfef6b396dd7aad2b25f976c23f34ddd67d72c8fb559f3c7aad8a1ca84",
+    "references/evidence.md": "afeac92daafe2d16fa10acdc378a434d6f178a6970baa380c6c3a38de9c02694",
+    "references/lessons.md": "d9721acb8ba5e54a035a82cd7d8d9352d428565cdd23b905ad842ac42e1354cd",
+    "scripts/verify.py": "b3570029f19a033d28b51cc3c5b249587f2d4de96a9ac5ab4719652ea5a1d895"
+  }
+}

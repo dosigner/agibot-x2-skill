@@ -1,4 +1,18 @@
-# Validation record for 1.1.0
+# Validation record for 1.2.0
+
+2026-11-17, macOS, local source validation. Hardware and the shared dashboard were not accessed.
+
+- 11 skills passed the skill-creator frontmatter validator.
+- 26 unittest cases passed. The suite covers all 23 feature routes in both languages, all 36 example groups, 93 definition-free type records, 11 standalone archives, installation in relocated paths for Codex/Claude/Cursor, shared Cursor reuse, conflicts/backups, rollback, package identity/tampering, archive corruption and deterministic rebuilds.
+- Release verification passed: 117 skill files and 116 relative Markdown links at this check. Public-file count may increase when this record is added to the manifest.
+- Public export was tested without the author's original project evidence. The selected text/ZIP credential-pattern scan reported no findings. This is not a proof that every possible sensitive datum is detectable by patterns; the new skill prose and selected inventory were also reviewed.
+- The field lessons cite 34 unique project-authored evidence files by workspace-relative path and SHA-256. These files were rehashed at review; the reports' historical robot results were not rerun.
+- The knowledge review reconciled RGB-D registration versus measured boundary mismatch, initial versus later central-camera reception, LiDAR relative time units, and the current own-navigation choice. This was source/contract review, not independent model forward-testing.
+
+Automatic discovery in running Codex/Claude/Cursor, Windows, current official website availability, ROS builds, live sensor/control/audio tests and new simulation/training were not run for this release. GitHub CI/release publication are verified separately from these local results.
+
+## Historical 1.1.0 record
+
 
 This is the official-link public version. It differs from the earlier local full-reference package: manufacturer definitions and specification tables were removed, and the skill now requires the relevant official page or installed SDK before using exact contracts. Earlier package/client results are not reused as proof of the new behavior.
 

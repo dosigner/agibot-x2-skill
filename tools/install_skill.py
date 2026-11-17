@@ -7,6 +7,7 @@ No client settings or dependencies are changed.
 import argparse
 from datetime import datetime, timezone
 import importlib.util
+import re
 from pathlib import Path
 import shutil
 import sys
@@ -25,15 +26,18 @@ tree_hashes = integrity.tree_hashes
 def install(client, base, dry_run=False, source=SOURCE, backup_existing=False):
     base = Path(base).expanduser().resolve()
     source = Path(source).expanduser().absolute()
+    name = source.name
+    if not re.fullmatch(r'agibot-x2-[a-z0-9]+(?:-[a-z0-9]+)*', name):
+        raise ValueError('Invalid skill directory name')
     report = integrity.verify(source)
     if not report['passed']:
         raise ValueError('Source integrity check failed: ' + '; '.join(report['errors']))
-    target = base / CLIENT_DIR[client] / 'skills' / NAME
+    target = base / CLIENT_DIR[client] / 'skills' / name
     expected = tree_hashes(source)
     if client == 'cursor':
         identical_shared = None
         for shared in ('.agents', '.claude'):
-            other = base / shared / 'skills' / NAME
+            other = base / shared / 'skills' / name
             if other.exists() or other.is_symlink():
                 if not other.is_symlink() and other.is_dir() and tree_hashes(other) == expected:
                     identical_shared = other
@@ -57,13 +61,13 @@ def install(client, base, dry_run=False, source=SOURCE, backup_existing=False):
     target.parent.mkdir(parents=True, exist_ok=True)
     backup = None
     with tempfile.TemporaryDirectory(prefix='.x2-stage-', dir=base) as temp:
-        stage = Path(temp) / NAME
+        stage = Path(temp) / name
         shutil.copytree(source, stage, ignore=shutil.ignore_patterns('__pycache__', '*.pyc'))
         if tree_hashes(stage) != expected:
             raise ValueError('Staged copy failed integrity check')
         if exists:
             backup = base / '.agibot-x2-backups' / client / (
-                datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ') + '-' + uuid.uuid4().hex[:8]) / NAME
+                datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ') + '-' + uuid.uuid4().hex[:8]) / name
             for parent in backup.parents:
                 if parent == base:
                     break
@@ -88,13 +92,15 @@ def main():
     where = parser.add_mutually_exclusive_group(required=True)
     where.add_argument('--project', type=Path, help='Target project root')
     where.add_argument('--user', action='store_true', help='Current OS user, all projects')
-    parser.add_argument('--source', type=Path, default=SOURCE, help='An extracted skill folder')
+    selection = parser.add_mutually_exclusive_group()
+    selection.add_argument('--source', type=Path, help='An extracted skill folder')
+    selection.add_argument('--skill', choices=[p.name for p in sorted(SOURCE.parent.iterdir()) if (p / 'SKILL.md').is_file()], default=NAME)
     parser.add_argument('--dry-run', action='store_true')
     parser.add_argument('--backup-existing', action='store_true')
     args = parser.parse_args()
     try:
         print(install(args.client, Path.home() if args.user else args.project,
-                      args.dry_run, args.source, args.backup_existing))
+                      args.dry_run, args.source or SOURCE.parent / args.skill, args.backup_existing))
     except (ValueError, OSError) as exc:
         print(str(exc), file=sys.stderr)
         raise SystemExit(2)

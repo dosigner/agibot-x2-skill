@@ -13,3 +13,7 @@ The [X2 AimDK homepage](https://x2-aimdk.agibot.com/en/latest/), [sensor interfa
 This distribution includes original instructions and software, short navigation labels, an authored feature/example classification and official URLs. It excludes transcribed manufacturer message definitions, endpoint contract tables, joint/FOV specification tables, raw HTML and the previous full-reference ZIPs. The skill instructs the user's agent to consult the official page or installed SDK when a technical contract is needed. External documents remain under their own terms and are not relicensed by this project.
 
 The license text is included both here and inside the skill ZIP. A hash-based integrity check verifies bytes, not publisher identity or the accuracy of linked documentation. The [license research record](docs/validation/license-review.json) identifies inspected sources and retained local evidence hashes; raw pages and full model logs are excluded from publication.
+
+## Authored field guidance, 1.2.0
+
+Specialist skills contain newly authored procedures and dated observations derived from the author's own project reports. They do not bundle manufacturer definitions, raw logs, private conversations, sensor data or binaries. Workspace-relative source names and content hashes are provenance pointers, not public download links. Historical observations and project preferences must not be generalized to every X2 installation.

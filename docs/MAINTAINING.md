@@ -1,4 +1,4 @@
-# Maintain and publish the official-link package
+# Maintain and publish the X2 skills package
 
 Run from the repository root with Python 3.10+:
 
@@ -22,3 +22,7 @@ The exporter writes a source ZIP and checksum beside the exported tree and recor
 The repository is intended to be public. The repository is https://github.com/dosigner/agibot-x2-skill. Rerun the checks and export the final selected source tree before creating a version tag and Release with the skill ZIP, checksum and source ZIP/checksum. Verify the live assets and repeat installation from the real repository URL when possible.
 
 The AI installation procedure is in [INSTALL_FOR_AGENTS.md](../INSTALL_FOR_AGENTS.md). Sandbox write restrictions are reported as incomplete installation; do not change protections to make a model probe pass. The historical fixture `tests/fixtures/capture.py` is intentionally incomplete for an offline code-edit scenario, not a robot-ready capture template.
+
+All skill directories are packaged independently. Keep the trusted verifier synchronized across skills; it validates the folder name against the manifest. `check_release.py` checks every selected skill archive, relative links and public source inventory. Keep each new skill and its archive paths explicitly allowlisted in `public_files.json`. Historical versioned ZIPs remain immutable.
+
+For field knowledge, update the dated lesson and its workspace source fingerprint together. Reconcile later observations instead of retaining an earlier absence as a permanent capability limitation. Raw session extraction and device evidence stay outside this repository. After export, copy the generated `PUBLIC_MANIFEST.json` back to the source root and rerun tests before committing.

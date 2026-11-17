@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 import re
 
-NAME = 'agibot-x2-interfaces'
+NAME = Path(__file__).resolve().parents[1].name
 
 
 def tree_hashes(root):
@@ -26,10 +26,11 @@ def tree_hashes(root):
 
 def verify(root, expected_version=None):
     root = Path(root)
+    package_name = root.name
     errors = []
     try:
         manifest = json.loads((root / 'package-manifest.json').read_text(encoding='utf-8'))
-        if manifest.get('name') != NAME:
+        if not re.fullmatch(r'agibot-x2-[a-z0-9]+(?:-[a-z0-9]+)*', package_name) or manifest.get('name') != package_name:
             errors.append('Unexpected package name')
         version = manifest.get('version')
         if not isinstance(version, str) or not re.fullmatch(r'\d+\.\d+\.\d+', version):
@@ -48,10 +49,15 @@ def verify(root, expected_version=None):
         for name in sorted(actual.keys() & expected.keys()):
             if actual[name] != expected[name]:
                 errors.append('Hash mismatch: ' + name)
-        for required in ('SKILL.md', 'scripts/lookup.py', 'references/index.md'):
+        required_files = ('SKILL.md', 'scripts/verify.py', 'LICENSE')
+        if package_name == 'agibot-x2-interfaces':
+            required_files += ('scripts/lookup.py', 'references/index.md')
+        else:
+            required_files += ('references/lessons.md', 'references/evidence.md')
+        for required in required_files:
             if required not in expected:
                 errors.append('Required file absent from manifest: ' + required)
-        return dict(passed=not errors, name=NAME, version=version, files_checked=len(actual), errors=errors)
+        return dict(passed=not errors, name=package_name, version=version, files_checked=len(actual), errors=errors)
     except (OSError, ValueError, TypeError, KeyError) as exc:
         return dict(passed=False, errors=[str(exc)])
 

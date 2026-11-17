@@ -1,0 +1,16 @@
+{
+  "name": "agibot-x2-voice",
+  "version": "1.2.0",
+  "distribution": "authored-field-guidance",
+  "license": "MulanPSL-2.0",
+  "source_document_version": "AimDK 1.0.0 field baseline; official web links are mutable; no manufacturer document snapshot included",
+  "files": {
+    "LICENSE": "d5777bea50dc2cd111845d8a9c51ab990d188ce343b843e5ad3e653b5fa8fdab",
+    "NOTICE.md": "b6f01f1e4cd8c60136daaf3393442fa8761b0b6368c42a51ff416740523e9053",
+    "SKILL.md": "617167000afb567198f4dc5d0fadb9e613bd259c933b582e244146fc3c7cbc99",
+    "agents/openai.yaml": "144b0a36870245cbc248e4575b69a0e350a433f8e19d958815951234e039b05b",
+    "references/evidence.md": "e9ea34c9c02f5caf8bee9a0d96f844206b64a0fa415ed12080dfad9ca9d29f11",
+    "references/lessons.md": "5f01179801f783f1274bb0956e74661b1f4aff538e590b2ddcb3b400a545b5a8",
+    "scripts/verify.py": "b3570029f19a033d28b51cc3c5b249587f2d4de96a9ac5ab4719652ea5a1d895"
+  }
+}

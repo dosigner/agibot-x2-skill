@@ -12,13 +12,14 @@ SKILL=ROOT/'skills/agibot-x2-interfaces'
 VERSION=(ROOT/'VERSION').read_text(encoding='utf-8').strip()
 
 
-def main():
+def package(skill):
+    SKILL = skill
     if not re.fullmatch(r'\d+\.\d+\.\d+', VERSION):
         raise ValueError('VERSION must use MAJOR.MINOR.PATCH')
     if any(p.is_symlink() for p in SKILL.rglob('*')):
         raise ValueError('Symlinks cannot be packaged')
     files=sorted(p for p in SKILL.rglob('*') if p.is_file() and '__pycache__' not in p.parts and p.suffix!='.pyc' and p.name!='package-manifest.json')
-    manifest=dict(name=SKILL.name,version=VERSION,distribution='official-links-only',license='MulanPSL-2.0',source_document_version='AimDK_X2 web links; no manufacturer document snapshot included',
+    manifest=dict(name=SKILL.name,version=VERSION,distribution='official-links-only' if SKILL.name == 'agibot-x2-interfaces' else 'authored-field-guidance',license='MulanPSL-2.0',source_document_version='AimDK 1.0.0 field baseline; official web links are mutable; no manufacturer document snapshot included',
                   files={p.relative_to(SKILL).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in files})
     mp=SKILL/'package-manifest.json'
     mp.write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
@@ -40,4 +41,6 @@ def main():
 
 
 if __name__=='__main__':
-    main()
+    for skill in sorted((ROOT / 'skills').iterdir()):
+        if (skill / 'SKILL.md').is_file():
+            package(skill)

@@ -1,0 +1,16 @@
+{
+  "name": "agibot-x2-simulation",
+  "version": "1.2.0",
+  "distribution": "authored-field-guidance",
+  "license": "MulanPSL-2.0",
+  "source_document_version": "AimDK 1.0.0 field baseline; official web links are mutable; no manufacturer document snapshot included",
+  "files": {
+    "LICENSE": "d5777bea50dc2cd111845d8a9c51ab990d188ce343b843e5ad3e653b5fa8fdab",
+    "NOTICE.md": "b6f01f1e4cd8c60136daaf3393442fa8761b0b6368c42a51ff416740523e9053",
+    "SKILL.md": "51a7c6bff15a486e3147354278e06e363f8249f09bed7d6494b4c0011c8f465b",
+    "agents/openai.yaml": "be0653945a711cc1f5c79461f9466f0a80be0b54a2dfebd4e143a54ae42bfc17",
+    "references/evidence.md": "52b78d2c27845d24a71b735e05365b88f72de299c38bf5890d7ce27f07fdd5ba",
+    "references/lessons.md": "4c16544e90da7c2561b3e896827f612b65e2cbc0964f9812b9f3d08a83dab9a5",
+    "scripts/verify.py": "b3570029f19a033d28b51cc3c5b249587f2d4de96a9ac5ab4719652ea5a1d895"
+  }
+}

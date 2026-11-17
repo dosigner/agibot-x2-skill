@@ -1,0 +1,30 @@
+{
+  "version": "1.2.0",
+  "review_date": "2026-11-17",
+  "skill_count": 11,
+  "project_evidence_file_count": 34,
+  "local_session_inventory_files": 3931,
+  "x2_session_files": 2558,
+  "x2_unique_session_ids": 2550,
+  "review_method": "metadata inventory; user/final-answer text extraction; deduplicated thematic screening; selected project source cross-check",
+  "coverage_limits": [
+    "includes child/inherited records",
+    "not a sentence-by-sentence audit of all tool outputs",
+    "other apps/hosts/deleted chats not covered",
+    "unrelated projects excluded"
+  ],
+  "tests": {
+    "unittest_cases": 26,
+    "result": "passed",
+    "skill_frontmatter": 11,
+    "standalone_archives": 11
+  },
+  "not_run": [
+    "independent model forward-testing",
+    "automatic client discovery",
+    "Windows",
+    "live hardware",
+    "new simulation or training",
+    "current upstream website audit"
+  ]
+}
