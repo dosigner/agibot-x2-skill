@@ -1,4 +1,10 @@
-# Validation record for 1.2.1
+# Validation record for 1.2.2
+
+[Claude Code comparison](CLAUDE_VALIDATION.md): the original sixteen prompts passed required selection and structured/numeric checks with Claude Code 2.1.326. Prose review found one HRI wording issue; only the baseline-subtraction/gravity-compensation paragraph was clarified. The original HRI prompt and a focused tilt counterexample passed again in both Claude and Codex. Discovery flags and narrow-shell permission fallbacks are recorded separately from skill quality.
+
+The package's 26 offline regression tests and 11 frontmatter checks passed locally. Model probes are explicit, opt-in runs and are not executed by CI. Historical model records below retain their original version and limits.
+
+## Historical 1.2.1 record
 
 2026-11-17. [Behavior validation](BEHAVIOR_VALIDATION.md) reports fresh Codex CLI requests, observed skill reads and independent artifact checks. Baseline: 13/13 cases. Revised: 16/16 unique cases, with two additional control rechecks after notation cleanup. All 11 skills were exercised; two negative cases selected no X2 skill. This is a small-sample observation, not a general reliability estimate or a no-skill comparison.
 

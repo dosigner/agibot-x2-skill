@@ -234,5 +234,25 @@
         "period_s": 3.141592653589793
       }
     }
+  },
+  {
+    "id": "gravity-baseline",
+    "prompt": "X2 IMU 밀림 알고리즘의 기준 벡터 차감 의미를 검토해줘. gravity.json은 합성 실험 계약이고 두 자세 모두 병진 가속도는 0이야. result.json에 delta_norm_m_s2, baseline_subtraction_proves_gravity_removal, force_newtons와 이유를 기록해줘. 기체 접속이나 새 학습은 하지 마.",
+    "expected_skills": [
+      "agibot-x2-hri"
+    ],
+    "files": {
+      "gravity.json": "{\"baseline_specific_force_m_s2\": [0, 0, 9.80665], \"later_specific_force_m_s2\": [9.80665, 0, 0], \"change\": \"sensor orientation rotated 90 degrees\", \"translational_acceleration_m_s2\": 0, \"operation\": \"norm(later - baseline)\", \"force_calibration\": null}"
+    },
+    "checks": {
+      "json_equals": {
+        "baseline_subtraction_proves_gravity_removal": false,
+        "force_newtons": null
+      },
+      "json_close": {
+        "delta_norm_m_s2": 13.868697431446114
+      },
+      "json_abs_tolerance": 1e-05
+    }
   }
 ]

@@ -63,6 +63,8 @@ python3 "$INSTALLED/scripts/lookup.py" --feature 4.1 --sensor rgbd --language py
 
 Require `passed: true` for every skill. For the interface skill additionally require feature `4.1`, `contracts_included: false` and the selected RGB-D links. For a specialist require `SKILL.md`, `references/lessons.md` and `references/evidence.md`; it intentionally has no lookup tool. This public version contains official links instead of manufacturer definitions and specification tables. It works offline for installation and link selection; exact X2 contracts require the selected official page or an installed SDK.
 
+For Claude Code, file installation alone does not establish discovery. In an explicitly requested headless evaluation, inspect the `system/init` skill inventory and successful `Skill` calls. A `--setting-sources` list excluding `project` and the tested CLI's `--restricted` mode can omit project skills. Keep required permissions and managed policy intact; diagnose the loading configuration rather than changing skill descriptions or adding broad `allowed-tools` grants. The [Claude comparison](docs/CLAUDE_VALIDATION.md) records the isolated configuration actually tested.
+
 Separately test client discovery/invocation if the current client exposes a skill selector or an authorized new session. If a restart/new session is needed, explain how to open the target project and invoke the skill. Reading `SKILL.md` directly or completing an offline lookup does not prove automatic discovery. Keep ROS/SDK build, live sensor reception and robot motion marked untested unless independently performed under the user's task. Installation does not request robot access.
 
 ## 5. Finish with first-use guidance

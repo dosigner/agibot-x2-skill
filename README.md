@@ -4,13 +4,15 @@
 
 A shared skill for Codex, Claude Code and Cursor. It helps you learn AGIBOT X2 Ultra AimDK/ROS 2 interfaces, edit C++ or Python code and develop your own algorithms. It selects the relevant official documentation and examples before working on your request.
 
-Version **1.2.1** retains official links in place of manufacturer document copies and adds ten independently installable field-work skills. Installation, integrity checks and link selection work offline. Exact message fields, topic contracts, joint limits and sensor specifications require access to the selected official page or the installed SDK. The robot reference remains **X2 Ultra Edition**; non-motion device queries require execution-path inspection. Explicitly requested control work follows the project authorization, installed contracts and existing protections through the control skill. Installing a skill does not request robot access.
+Version **1.2.2** retains official links in place of manufacturer document copies and adds ten independently installable field-work skills. Installation, integrity checks and link selection work offline. Exact message fields, topic contracts, joint limits and sensor specifications require access to the selected official page or the installed SDK. The robot reference remains **X2 Ultra Edition**; non-motion device queries require execution-path inspection. Explicitly requested control work follows the project authorization, installed contracts and existing protections through the control skill. Installing a skill does not request robot access.
 
 **AI agents:** For an installation/update request, follow [INSTALL_FOR_AGENTS.md](INSTALL_FOR_AGENTS.md). Install, verify what is possible, and finish with first-use guidance. Reading a repository link alone does not request changes to the environment.
 
 Public repository: [https://github.com/dosigner/agibot-x2-skill](https://github.com/dosigner/agibot-x2-skill). Download the included skill ZIP below or clone the repository. Release assets are listed on the [Releases page](https://github.com/dosigner/agibot-x2-skill/releases).
 
-Version 1.2.1 adds [real Codex request probes](docs/BEHAVIOR_VALIDATION.md), standalone projection/joint guidance, project-specific version scope, and specialist installation instructions. The behavior probes are opt-in model runs, separate from offline CI tests.
+Version 1.2.2 adds [real Codex request probes](docs/BEHAVIOR_VALIDATION.md), standalone projection/joint guidance, project-specific version scope, and specialist installation instructions. The behavior probes are opt-in model runs, separate from offline CI tests.
+
+The [Claude Code comparison](docs/CLAUDE_VALIDATION.md) exercises the same request fixtures and records loader differences, independent results, and the focused HRI clarification.
 
 ## Field knowledge skills
 
@@ -30,11 +32,11 @@ for skill in skills/agibot-x2-*; do
 done
 ```
 
-For an intended update, add `--backup-existing` after reviewing existing differences. Each skill has `dist/<skill>.zip` and its checksum; the original ZIP still contains only the original interface skill. Package version 1.2.1 is **not** AimDK 1.2.1: the local field baseline is AimDK 1.0.0. Observations are historical, installation-specific evidence, not a current robot health report.
+For an intended update, add `--backup-existing` after reviewing existing differences. Each skill has `dist/<skill>.zip` and its checksum; the original ZIP still contains only the original interface skill. Package version 1.2.2 is **not** AimDK 1.2.2: the local field baseline is AimDK 1.0.0. Observations are historical, installation-specific evidence, not a current robot health report.
 
 ## Download
 
-[Skill ZIP](dist/agibot-x2-interfaces.zip) / [SHA-256](dist/agibot-x2-interfaces.zip.sha256) / [Versioned ZIP](dist/agibot-x2-interfaces-1.2.1.zip)
+[Skill ZIP](dist/agibot-x2-interfaces.zip) / [SHA-256](dist/agibot-x2-interfaces.zip.sha256) / [Versioned ZIP](dist/agibot-x2-interfaces-1.2.2.zip)
 
 The skill ZIP contains one `agibot-x2-interfaces/` folder with a verifier. The full source package or repository clone also contains `tools/install_skill.py`, tests and these guides. GitHub's generated “Source code” archive is a source checkout, not the same file as the skill ZIP.
 
@@ -50,7 +52,7 @@ Local file execution and repository access are required. The default scope is yo
 
 ## Install yourself
 
-Use Python 3.10+; no extra Python packages are needed. Shell examples use Linux/macOS syntax. The 1.2.1 packaging/install tests are run on macOS and CI checks Linux. Windows and automatic client discovery require separate validation.
+Use Python 3.10+; no extra Python packages are needed. Shell examples use Linux/macOS syntax. The 1.2.2 packaging/install tests are run on macOS and CI checks Linux. Windows and automatic client discovery require separate validation.
 
 ```bash
 git clone https://github.com/dosigner/agibot-x2-skill.git
@@ -70,7 +72,7 @@ For a skill ZIP download, put the ZIP and checksum together and run:
 ```bash
 sha256sum -c agibot-x2-interfaces.zip.sha256 &&
 python3 -m zipfile -e agibot-x2-interfaces.zip x2-unpacked &&
-python3 x2-unpacked/agibot-x2-interfaces/scripts/verify.py --expected-version 1.2.1
+python3 x2-unpacked/agibot-x2-interfaces/scripts/verify.py --expected-version 1.2.2
 ```
 
 On macOS use `shasum -a 256 -c` for the checksum. Continue only if it is OK and the verifier reports `passed: true`. Move the complete extracted skill folder into one destination below. Preserve an existing folder and use the source installer for an update. The skill ZIP contains no `tools/install_skill.py`.
@@ -88,7 +90,7 @@ Cursor also discovers shared paths; the installer reuses an identical `.agents` 
 For a Codex project installation:
 
 ```bash
-python3 .agents/skills/agibot-x2-interfaces/scripts/verify.py --expected-version 1.2.1
+python3 .agents/skills/agibot-x2-interfaces/scripts/verify.py --expected-version 1.2.2
 python3 .agents/skills/agibot-x2-interfaces/scripts/lookup.py --feature 4.1 --sensor rgbd --language python
 ```
 
@@ -120,7 +122,7 @@ The skill body and routing notes are mainly Korean; request an English answer if
 
 The package routes 5 modules, 23 features, 36 official example groups and 93 type names. Manufacturer message definitions, endpoint tables, raw HTML, joint/FOV specification tables and the previous full-reference ZIPs are excluded. URLs and short labels are navigation metadata; third-party pages keep their own terms.
 
-See the [validation report](docs/VALIDATION.md) for current tests and model probes. Earlier 1.0.1 results are not claims about every 1.2.1 behavior. Cursor GUI/model invocation and live robot verification remain untested. Build, sensor reception and motion are separate from installing a skill.
+See the [validation report](docs/VALIDATION.md) for current tests and model probes. Earlier 1.0.1 results are not claims about every 1.2.2 behavior. Cursor GUI/model invocation and live robot verification remain untested. Build, sensor reception and motion are separate from installing a skill.
 
 ## License
 

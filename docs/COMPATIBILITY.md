@@ -13,3 +13,7 @@ The ten specialist skills use the same discovery directories and invocation pref
 ## 1.2.1 request-level validation
 
 Fresh Codex CLI sessions selected and read all eleven skills across the request suite. Standalone sensors/control installations also passed. See [the behavior report](BEHAVIOR_VALIDATION.md) for fixtures, observed reads and limits. This does not establish desktop picker UI, Claude/Cursor model behavior or cross-model reliability.
+
+## Claude Code 2.1.326 comparison
+
+The same sixteen natural-language cases were executed in fresh Claude Code sessions. Project-skill registration, native Skill invocation and generated artifacts were checked separately. Loader flags can hide a correctly installed skill, and a shell allowlist can reject a compound command without invalidating a successful Read/Write fallback. See [the measured comparison and exact limits](CLAUDE_VALIDATION.md). No client permission setting or skill allowed-tools grant is silently installed by this package.

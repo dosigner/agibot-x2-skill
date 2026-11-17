@@ -1,0 +1,401 @@
+{
+  "version": "1.2.2",
+  "date": "2026-11-17",
+  "claude_cli": "2.1.326",
+  "claude_observed_model": "claude-fable-5-2",
+  "model_override": false,
+  "codex_reference": "forward-testing.json (codex-cli 0.169.0, CLI default model)",
+  "same_original_prompts_and_fixtures": 16,
+  "baseline": {
+    "required_selection_passed": 16,
+    "structured_or_numeric_passed": 16,
+    "prose_review_caveats": 1
+  },
+  "final_original_cases": {
+    "passed": 16,
+    "hri_replaced_by_post_change_run": true
+  },
+  "distinct_skills_exercised": 11,
+  "negative_cases": 2,
+  "standalone_cases": 2,
+  "loading_probes": [
+    {
+      "probe": "bootstrap",
+      "setting_sources": [],
+      "restricted": true,
+      "registered_x2_skills": 0
+    },
+    {
+      "probe": "bootstrap-project",
+      "setting_sources": [
+        "project"
+      ],
+      "restricted": true,
+      "registered_x2_skills": 0
+    },
+    {
+      "probe": "bootstrap-loading",
+      "setting_sources": [
+        "project"
+      ],
+      "restricted": false,
+      "registered_x2_skills": 11
+    },
+    {
+      "probe": "bootstrap-empty-source",
+      "setting_sources": [],
+      "restricted": false,
+      "registered_x2_skills": 0
+    },
+    {
+      "probe": "bootstrap-restricted-controlled",
+      "setting_sources": [
+        "project"
+      ],
+      "restricted": true,
+      "registered_x2_skills": 0
+    }
+  ],
+  "permission_denials": {
+    "baseline_cases": [
+      "voice",
+      "face",
+      "hri",
+      "slam",
+      "control",
+      "dashboard",
+      "interfaces",
+      "scope",
+      "standalone-sensors",
+      "standalone-control"
+    ],
+    "cause": "compound cd/redirection commands not covered by narrow allow rules; allowed Read/Write/direct commands used instead",
+    "bypass_used": false,
+    "independent_code_oracles_passed": true
+  },
+  "hri_review": {
+    "initial_issue": "one next-test proposal called stable baseline subtraction gravity removal without an attitude assumption",
+    "same_prompt_repeat": "did not repeat the same conflation",
+    "focused_counterexample_before_edit": "correct",
+    "change": "one paragraph distinguishes baseline difference from attitude-aware gravity compensation",
+    "claude_after_edit": [
+      "hri passed including prose review",
+      "gravity-baseline passed"
+    ],
+    "codex_after_edit": [
+      "hri passed",
+      "gravity-baseline passed"
+    ],
+    "universal_or_persistent_model_error_claimed": false
+  },
+  "results": [
+    {
+      "id": "runtime",
+      "codex_skills": [
+        "agibot-x2-runtime"
+      ],
+      "claude_skills": [
+        "agibot-x2-runtime"
+      ],
+      "required_selection_passed": true,
+      "structured_or_numeric_passed": true,
+      "baseline_permission_denials": 0,
+      "evaluated_skill_sha256": {
+        "agibot-x2-runtime": "a533b7e11c55babc7c0612ae5aa3c946d117791dd4119e9e84813382a01a2064"
+      },
+      "artifact_sha256": {
+        "result.json": "bc722ee3bfc6c0837079ebfa6fa64e615c8819f1c0f4647efcf101326668e305"
+      }
+    },
+    {
+      "id": "sensors",
+      "codex_skills": [
+        "agibot-x2-sensors"
+      ],
+      "claude_skills": [
+        "agibot-x2-sensors"
+      ],
+      "required_selection_passed": true,
+      "structured_or_numeric_passed": true,
+      "baseline_permission_denials": 0,
+      "evaluated_skill_sha256": {
+        "agibot-x2-sensors": "4cf7b5c1c7d34d49e96296bc6052196765b0518ddeb9fb154bd2205669d49f36"
+      },
+      "artifact_sha256": {
+        "independent_check.txt": "71af8f074bcf729c30b92e2c8e38d4648551dd3684ac80cbb349577ded4edcc8",
+        "geometry.py": "ce8da1f48451224182ee116e04d3165649fff1b9d5aa9694ac6366024664b384"
+      }
+    },
+    {
+      "id": "voice",
+      "codex_skills": [
+        "agibot-x2-voice"
+      ],
+      "claude_skills": [
+        "agibot-x2-voice"
+      ],
+      "required_selection_passed": true,
+      "structured_or_numeric_passed": true,
+      "baseline_permission_denials": 1,
+      "evaluated_skill_sha256": {
+        "agibot-x2-voice": "617167000afb567198f4dc5d0fadb9e613bd259c933b582e244146fc3c7cbc99"
+      },
+      "artifact_sha256": {
+        "result.json": "ce9b8ade0f0e2eab9830f255b41be9c960b1ca40c7f9d7336f5480f2f390c9d6"
+      }
+    },
+    {
+      "id": "face",
+      "codex_skills": [
+        "agibot-x2-face"
+      ],
+      "claude_skills": [
+        "agibot-x2-face"
+      ],
+      "required_selection_passed": true,
+      "structured_or_numeric_passed": true,
+      "baseline_permission_denials": 1,
+      "evaluated_skill_sha256": {
+        "agibot-x2-face": "a82c6b6ca5eb8e137cf2568c2516021fafcd6f2d5c69dd5bca0566af1134b042"
+      },
+      "artifact_sha256": {
+        "result.json": "d3450fdcf51618c72df5a686e138cbbda6f4ee83faf6322f724614082d8c6945"
+      }
+    },
+    {
+      "id": "hri",
+      "codex_skills": [
+        "agibot-x2-hri"
+      ],
+      "claude_skills": [
+        "agibot-x2-hri"
+      ],
+      "required_selection_passed": true,
+      "structured_or_numeric_passed": true,
+      "baseline_permission_denials": 1,
+      "evaluated_skill_sha256": {
+        "agibot-x2-hri": "0db830ea7433271e4b4af5c32e1105cd3e6844a12a53dedab69d24d9db3990f1"
+      },
+      "artifact_sha256": {
+        "result.json": "b38bd5eb2c8d71aa6f79ca396d1113b66ac099f0511216be171d79a86faee03d"
+      }
+    },
+    {
+      "id": "slam",
+      "codex_skills": [
+        "agibot-x2-slam-navigation"
+      ],
+      "claude_skills": [
+        "agibot-x2-slam-navigation"
+      ],
+      "required_selection_passed": true,
+      "structured_or_numeric_passed": true,
+      "baseline_permission_denials": 1,
+      "evaluated_skill_sha256": {
+        "agibot-x2-slam-navigation": "44830b9b3d6be21cf92ced49d45d0d7fd2004ee75cb617af96469f61519c54d6"
+      },
+      "artifact_sha256": {
+        "independent_check.txt": "ce3d2c8334b6c19b44643873f8ccd52958619e4fd6d63fbe5fd704f67f77bdda",
+        "pose.py": "3c3685dc4bf5b303117d4477877c3039bac20c878d5ef414305b11cbc056244b"
+      }
+    },
+    {
+      "id": "control",
+      "codex_skills": [
+        "agibot-x2-control"
+      ],
+      "claude_skills": [
+        "agibot-x2-control"
+      ],
+      "required_selection_passed": true,
+      "structured_or_numeric_passed": true,
+      "baseline_permission_denials": 1,
+      "evaluated_skill_sha256": {
+        "agibot-x2-control": "601e0fcb6b3bfcecee62084c2607daec624dcf946cf20838700d26d947774715"
+      },
+      "artifact_sha256": {
+        "ledger.py": "0205ca02106f2bd708d9b1f78bf4d034470a4acf76ea5e1c05f392c5365f7d6a",
+        "independent_check.txt": "cd984f5c6852d2eca0a73cbff25fb84629656b95b5af8fa6f3be819c370482c6"
+      }
+    },
+    {
+      "id": "dashboard",
+      "codex_skills": [
+        "agibot-x2-dashboard"
+      ],
+      "claude_skills": [
+        "agibot-x2-dashboard"
+      ],
+      "required_selection_passed": true,
+      "structured_or_numeric_passed": true,
+      "baseline_permission_denials": 1,
+      "evaluated_skill_sha256": {
+        "agibot-x2-dashboard": "692b684ba99aa85d7a97ae0001f2af6faa8f17b3a87e9607f49ae6e5c0e96907"
+      },
+      "artifact_sha256": {
+        "result.json": "8087ff79fb50dd88fa7626c7e0c3ea5219a61981daf82dc369b8fbb1ea0cc78c"
+      }
+    },
+    {
+      "id": "motion",
+      "codex_skills": [
+        "agibot-x2-motion-retargeting",
+        "agibot-x2-simulation"
+      ],
+      "claude_skills": [
+        "agibot-x2-motion-retargeting"
+      ],
+      "required_selection_passed": true,
+      "structured_or_numeric_passed": true,
+      "baseline_permission_denials": 0,
+      "evaluated_skill_sha256": {
+        "agibot-x2-motion-retargeting": "776336b7c2eed4d42cf4c60bc5c703a8adf90a3928a804c9250aa81885405454"
+      },
+      "artifact_sha256": {
+        "result.json": "f1a63c3806a0a4109d86973b1f40e28c2cf4eeb6c3b10e284f978dd51a56e35d"
+      }
+    },
+    {
+      "id": "simulation",
+      "codex_skills": [
+        "agibot-x2-simulation"
+      ],
+      "claude_skills": [
+        "agibot-x2-simulation"
+      ],
+      "required_selection_passed": true,
+      "structured_or_numeric_passed": true,
+      "baseline_permission_denials": 0,
+      "evaluated_skill_sha256": {
+        "agibot-x2-simulation": "0bae104cf72d7e2fa08471559e2a91f68fcb7937bfdc540e6be0dbd77dcf21fa"
+      },
+      "artifact_sha256": {
+        "result.json": "4b38af442d264f9b7a106a287c6749af0ec1f9a47b0b3271fc7b1c37db43ca06"
+      }
+    },
+    {
+      "id": "interfaces",
+      "codex_skills": [
+        "agibot-x2-interfaces",
+        "agibot-x2-sensors"
+      ],
+      "claude_skills": [
+        "agibot-x2-interfaces"
+      ],
+      "required_selection_passed": true,
+      "structured_or_numeric_passed": true,
+      "baseline_permission_denials": 1,
+      "evaluated_skill_sha256": {
+        "agibot-x2-interfaces": "8fcc6bbb44d5c200ce2591a6cdf04937abaaae979c7d182d611cad73abf75620"
+      },
+      "artifact_sha256": {
+        "result.json": "ff4885d2c4f1015d2697ccd0a607d354c00fa2c022fdf18936441c29722f8b6b"
+      }
+    },
+    {
+      "id": "negative",
+      "codex_skills": [],
+      "claude_skills": [],
+      "required_selection_passed": true,
+      "structured_or_numeric_passed": true,
+      "baseline_permission_denials": 0,
+      "evaluated_skill_sha256": {},
+      "artifact_sha256": {
+        "result.txt": "08f735f68a195b057d2e9e5ac26a2ef07ae856cbf13d3b631f9170dd3e8c3f42"
+      }
+    },
+    {
+      "id": "scope",
+      "codex_skills": [
+        "agibot-x2-interfaces",
+        "agibot-x2-runtime",
+        "agibot-x2-simulation"
+      ],
+      "claude_skills": [
+        "agibot-x2-interfaces",
+        "agibot-x2-simulation"
+      ],
+      "required_selection_passed": true,
+      "structured_or_numeric_passed": true,
+      "baseline_permission_denials": 1,
+      "evaluated_skill_sha256": {
+        "agibot-x2-simulation": "0bae104cf72d7e2fa08471559e2a91f68fcb7937bfdc540e6be0dbd77dcf21fa",
+        "agibot-x2-interfaces": "8fcc6bbb44d5c200ce2591a6cdf04937abaaae979c7d182d611cad73abf75620"
+      },
+      "artifact_sha256": {
+        "result.json": "8c10ae23f05bb8c829ccf4a1332ed5dc6fa58071599c90134d1e958d063ca452"
+      }
+    },
+    {
+      "id": "standalone-sensors",
+      "codex_skills": [
+        "agibot-x2-sensors"
+      ],
+      "claude_skills": [
+        "agibot-x2-sensors"
+      ],
+      "required_selection_passed": true,
+      "structured_or_numeric_passed": true,
+      "baseline_permission_denials": 1,
+      "evaluated_skill_sha256": {
+        "agibot-x2-sensors": "4cf7b5c1c7d34d49e96296bc6052196765b0518ddeb9fb154bd2205669d49f36"
+      },
+      "artifact_sha256": {
+        "independent_check.txt": "71af8f074bcf729c30b92e2c8e38d4648551dd3684ac80cbb349577ded4edcc8",
+        "geometry.py": "e585a3dd6730c4c1dc4fe88ff1d93af2e5266e3e09cae2d7ca2f06b3664f837a"
+      }
+    },
+    {
+      "id": "standalone-control",
+      "codex_skills": [
+        "agibot-x2-control"
+      ],
+      "claude_skills": [
+        "agibot-x2-control"
+      ],
+      "required_selection_passed": true,
+      "structured_or_numeric_passed": true,
+      "baseline_permission_denials": 1,
+      "evaluated_skill_sha256": {
+        "agibot-x2-control": "601e0fcb6b3bfcecee62084c2607daec624dcf946cf20838700d26d947774715"
+      },
+      "artifact_sha256": {
+        "result.json": "ecc63bbc7e531930b304b308c48e062528605081d332857d8c8110c8d14c6423"
+      }
+    },
+    {
+      "id": "negative-simulation",
+      "codex_skills": [],
+      "claude_skills": [],
+      "required_selection_passed": true,
+      "structured_or_numeric_passed": true,
+      "baseline_permission_denials": 0,
+      "evaluated_skill_sha256": {},
+      "artifact_sha256": {
+        "result.json": "a614a865796c0ad06e9749b77e4f9fc837ee13dee264b9b97e434e9764d6a678"
+      }
+    }
+  ],
+  "limits": [
+    "one default model per client; client/model effects are confounded",
+    "small offline synthetic sample; no general reliability or speed ranking",
+    "native Claude Skill invocation versus Codex file-read consumption",
+    "desktop UI, Cursor model behavior and hardware not tested",
+    "model API inference was online; task data stayed in isolated local fixtures"
+  ],
+  "primary_docs": [
+    "https://code.claude.com/docs/en/skills",
+    "https://code.claude.com/docs/en/permissions#additional-directories-grant-file-access-not-configuration"
+  ],
+  "unspecified_edge_precedence": {
+    "input": {
+      "raw": 0,
+      "scale_m_per_raw": 0
+    },
+    "codex": "None",
+    "claude": "ValueError",
+    "claude_standalone": "ValueError",
+    "cause": "original task does not order simultaneous missing-depth and invalid-calibration handling",
+    "action": "recorded without imposing a new global skill rule or retroactively changing benchmark expectations"
+  }
+}
